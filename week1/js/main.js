@@ -1,19 +1,24 @@
-const link = [
+const links = [
     {  
         label: 'Week1 Notes',
-        url: 'index.html'
-    },
-    {
-        label: 'Week 2',
-        url: 'index.html'
+        url: 'week1/index.html'
     }
 ]
 
-for (let i = 0; i < link.length; i++) {
-    w = link[i].label + ' ' + link[i].url;
+for(let i = 0; i < links.length; i++) {
+    l = links[i].label + ' ' + links[i].url;
 
-    for (let x = 0; x <link.length; x++) {
-        document.getElementById('link').innerHTML = w;
-    }
+    let li = document.createElement('li');
+    let a = document.createElement('a');
+                   
+    a.textContent = l;
+                
+    li.appendChild(a);
+                
+    document.getElementById('link').appendChild(li);
+
+    // for (let x = 0; x <link.length; x++) {
+    //     document.getElementById('link').innerHTML = w;
+    // }
 }
 
