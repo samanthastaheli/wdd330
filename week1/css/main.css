@@ -22,7 +22,7 @@ h1 {
 }
 
 h2 {
-    font-size: 20px;
+    font-size: 18px;
 }
 
 main {
@@ -32,7 +32,20 @@ main {
 }
 
 h3 {
+    font-size: 20px;
+    padding-top: 40px;
+}
+
+.firsth3 {
+    padding-top: 0px;
+}
+
+h4 {
     padding-top: 20px;
+}
+
+.firsth4 {
+    padding-top: 0px;
 }
 
 p {
@@ -56,4 +69,21 @@ footer {
     padding: 20px;
     font-size: 12px;
     text-align: center;
+}
+
+#list {
+    line-height: 1.5;
+}
+#mobilethumb {
+    height: 350px;
+    float: right;
+    padding: 20px;
+}
+
+.ollistitem {
+    padding-top: 20px;
+}
+
+#firstlistitem {
+    padding-top: 0px;
 }
