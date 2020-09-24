@@ -5,7 +5,7 @@ function negative(num) {
 negative(3); //use
 
 //function expression
-const negative2(num) {
+const negative2 = function(num) {
     return num * -1;
 }
 negative2(3); //use
@@ -23,5 +23,3 @@ function rand(range, offset) {
     return Math.floor(Math.random() * range) + offset;
 }
 //range = 14 offset = 22
-
-//random sentence generator 
