@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Week 2 Notes</title>
+</head>
+<body>
+    <header>
+        <h1>Week 2 Notes</h1>
+        <h2>Samantha Staheli</h2>
+    </header>
+<main>
+    <h3>Questions</h3>
+    <ol>
+        <li>What is the difference between primitive values and non-primitive values?</li>
+        <li>What is the purpose of the b; in { b = 4; b; }?</li>
+        <li>What is a floating piont number?</li>
+    </ol>
+    <h3>Variables</h3>
+    <h4>const vs. let</h4>
+    <p>const = use when variable will <b>not</b> be reassigned another value</p>
+    <p>let = use if variable will/might reassigned a different value</p>
+    <h4>Immutable vs. Mutable</h4>
+    <p>Immutable: An object that cannot be modified after it has been created.</p>
+    <p>Mutable: An object that can be modified after it is created.</p>
+    <h4>assign multiple variables:</h4>
+    <p>let x=1, y=2, z=3</p>
+    <h4>reassign value:</h4>
+    <p>variableName = 5</p>
+    <h4>Naming Variables</h4>
+    <p>Can start with lowercase, uppercase, underscore, or $.</p>
+    <p>If starts with underscore it is usually for private properties or methods.</p>
+    <p>Starting with $ is used in jQuery.</p>
+
+    <h3>Scope</h3>
+    <h4>Global Scope:</h4>
+   <ul>
+       <li>Variables outside of block (loops, if, switches, etc.)</li>
+       <li>Accessable everywhere</li>
+   </ul>
+   <h4>Local Scope:</h4>
+   <ul>
+       <li>Variables created inside block using let or const.</li>
+       <li>Only accesible inside that block.</li>
+   </ul>
+   <h4>How to overwrite global variables from block?</h4>
+   <p>Don't use let in the block. Without it will refer to the global variable outside the block.</p>
+   <p class="exampleText">Example:</p>
+   <p class="example2">let b = 2;</p>
+   <p class="example2">{ b = 4; b; }</p>
+   <h4>How to create a global variable inside a block?</h4>
+   <p>Don't use let or const when make new variable</p>
+   <p class="exampleText">Example:</p>
+   <p class="example2">{ x = 6; x; }</p>
+
+   <h3>Template Literals</h3>
+   <p>A type of string that usues backticker characrer `</p>
+   <p>More powerful then strings.</p>
+
+   <h3>Type Coercion</h3>
+   <p>Value automaticly coverted from one data type to another.</p>
+
+   <h3>Implicit vs. Explicit</h3>
+   <p>Implicit: something that is done for you by other code behind the schenes.</p>
+   <p>Explicit: manually accoplish change by code you wrote</p>
+
+   <h3>Converting string to number</h3>
+   <ol>
+       <li>Number method: Number('27');</li>
+       <li>Multiply numerical string by 1: const x = '2' * 1;</li>
+       <li>+ operator inf front of numberical string: const x = +'7';</li>
+       <li>parseInt()
+           <ul>
+               <li>If string starts with number it will display only the numbers not any words.</li>
+               <li>If decimal displays nothing after decimal.</li>
+           </ul>
+       </li>
+       <li>parseFloat()
+           <ul>
+               <li>Converst string into floating point number.</li>
+           </ul>
+       </li>
+   </ol>
+
+   <h3>Converting numbers to strings</h3>
+   <ol>
+       <li>String function: string(3);</li>
+       <li>Add empty string: 3 + ' ';</li>
+       <li>toString() method</li>
+   </ol>
+
+   <h3>Arrays</h3>
+   <h4>Change length:</h4>
+   <p>arrayName.length = 5;</p>
+   <h4>Remove entity:</h4>
+   <ol>
+       <li>pop() - removes last element</li>
+       <li>shift() - removes first element</li>
+       <li>splice() - removes specific elements
+           <ul>
+               <li>example: .splice( 0, 2 ) removes 2 elements starting at the 0 index</li>
+           </ul>
+       </li>
+   </ol>
+   <h4>Add entity:</h4>
+   <ol>
+       <li>push() - add 1 or more elements to end</li>
+       <li>unshift() - add 1 or more elements to begining</li>
+       <li>splice( 6, 0, 'g', 'h' ) - removes 0 elements from index 6 and adds elements g and h</li>
+       <li>Set elements at next index position in that array.</li>
+   </ol>
+   <h4>Replacing entity:</h4>
+   <ol>
+       <li>reassign entity</li>
+       <li>splice( 6, 2, 's', 'o' ) - removes 2 entities at index 6 and adds s and o</li>
+   </ol>
+   <h4>Destructung arrays:</h4>
+   <p>Take values out of array and assign them to variables.</p>
+   <p class="exampleText">Example:</p>
+   <p class="example2">let [x, y] = [1, 2];</p>
+   <h4>Merge arrays:</h4>
+   <ol>
+       <li>concat() method</li>
+        <li>spread operator: 3 dots in front of array
+            <ul>
+                <li>ex: arrayName = [...arrayName, ...[1, 2, 3, 4]];</li>
+            </ul>
+        </li>
+        <li>join() method
+            <ul>
+                <li>Creates a new string of all the elements in the array</li>
+                <li>Seperated by commas.</li>
+                <li>Change seperation symbol:
+                    <ul>
+                        <li>arrayName.join('&') - now seperated by &</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+   </ol>
+   <h4>Reverse array:</h4>
+   <p>reverse() method</p>
+   <h4>Sort array:</h4>
+   <p>sort() method
+       <ul>
+        <li>Default sort strings aphabetically.</li>
+        <li>Sorts numbers by first digit.</li>
+    </ul>
+   </p>
+   <h4>indexOf() method</h4>
+   <p>Finds first occurance of value.</p>
+   <h4>includes() method</h4>
+   <p>Returns boolean value if contains value or not.</p>
+   <h4>Multidemensional array:</h4>
+   <p>An array of arrays.</p>
+   <p class='exampleText'>Example:</p>
+   <p class='example2'>arrayName = [[1, 2], [3, 4]];</p>
+   <p>Access it in two indices - first is outer array second is inner array</p>
+   <p class='example2'>arrayName[1][0]; first value in second array</p>
+   <p>Flatten array: removes nested arrays</p>
+
+   <h3>Sets</h3>
+   <p>constructor method</p>
+</main>
+<footer>
+    <h5>WDD 330 | Week 2 Notes | Samantha Staheli</h5>
+</footer>
+</body>
+</html>

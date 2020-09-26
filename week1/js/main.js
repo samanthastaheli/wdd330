@@ -2,16 +2,22 @@ const links = [
     {  
         label: 'Week1 Notes',
         url: 'week1/index.html'
+    },
+    {
+        label: 'Week2 Notes',
+        url: 'week2/week2.html'
     }
 ]
 
 for(let i = 0; i < links.length; i++) {
-    l = links[i].label + ' ' + links[i].url;
+    // weekLabel = links[i].label;
+    // weekLink = links[i].url;
 
     let li = document.createElement('li');
     let a = document.createElement('a');
                    
-    a.textContent = l;
+    li.textContent = links[i].label;
+    a.textContent = href='links[i].url';
                 
     li.appendChild(a);
                 
