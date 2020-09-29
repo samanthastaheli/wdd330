@@ -18,11 +18,13 @@ header {
 }
 
 h1 {
-    font-size: 36px;
+    font-size: 42px;
 }
 
 h2 {
     font-size: 18px;
+    padding-top: 0px;
+    margin-top: 0px;
 }
 
 main {
@@ -32,12 +34,13 @@ main {
 }
 
 h3 {
-    font-size: 20px;
+    font-size: 24px;
     padding-top: 40px;
 }
 
 .firsth3 {
     padding-top: 0px;
+    margin-top: 0px;
 }
 
 h4 {
