@@ -95,19 +95,23 @@ const yearsLived = function() {
         return lived;
     }
 } 
-console.log(yearsLived);
-let result5 = yearsLived.sort(function(a, b){return b-a});
+// console.log(yearsLived);
+// let result5 = yearsLived.sort(function(a, b){return b-a});
 
-console.log(result5);
+// console.log(result5);
 
       // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
       // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
-      // goto the link above and open the console. Paste the following two lines in.  That will create a list of links in memory that you can reference through the console. Use that list to finish the problem.
-      // const category = document.querySelector('.mw-category');
-      // const links = Array.from(category.querySelectorAll('a'));
+      /* go to the link above and open the console. Paste the following two lines in.  
+         That will create a list of links in memory that you can reference through the console. 
+         Use that list to finish the problem. */ 
+      /* const category = document.querySelector('.mw-category');
+         const links = Array.from(category.querySelectorAll('a')); */
 
       // 7. sort Exercise
       // Sort the people alphabetically by last name
+
+console.log(people.sort());
 
       // 8. Reduce Exercise
       // Sum up the instances of each of these
