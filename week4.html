@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main-medium.css">
+    <link rel="stylesheet" href="css/main-large.css">
+    <title>Week 4 Notes</title>
+</head>
+<body>
+    <header>
+        <div id='navigation'>
+            <h1 id='homeTitle'>WDD 330 Portfolio: Samantha Staheli</h1>
+        <div id='navDiv'>
+            <ul id='nav'>
+                <li class='navLi'><a href='index.html'>Home</a></li>
+                <li class='navLi'>Weekly Notes</li>
+            </ul>
+        </div>
+        </div>
+        <div id='titleDiv'>
+            <h1 id='titleColorSide' class='headerTitleColor'>Week 4</h1>
+            <h1 id='titleWhiteSide'>Notes</h1>
+            <h2 class='headerTitleColor'>Samantha Staheli</h2>
+        </div>
+    </header>
+<main>
+    <h3>Questions</h3>
+    <ol class="firsth4">
+        <li>Why is my hero form not working?</li>
+    </ol>
+<h3>Chapter 8 Notes</h3>
+<h4>A Form Needs</h4>
+<ul>
+    <li>Form tag needs name and action attribute
+        <ul>
+            <li>name is the name of the form</li>
+            <li>action is URL that form will be submitted to</li>
+        </ul>
+    <li>input tag needs a name</li>
+    <li>button tag needs type</li>
+    </li>
+</ul>
+
+<h4>Form Controls/Tags</h4>
+<ol>
+    <li>input: text, numbers, check boxes, radio buttons, and file uploads</li>
+    <li>select: makes drop-down list of options</li>
+    <li>textarea: makes longer text entry</li>
+    <li>button</li>
+    <li>required: add the word required into input tag and input is now required</li>
+</ol>
+
+<h4>Input Types</h4>
+<ol>
+    <li>text</li>
+    <li>password
+        <ul><li>the input will not able to be seen</li></ul>
+    </li>
+    <li>checkbox
+        <ul>
+            <li>have checked property to determine if checked</li>
+            <li>add word: checked inside input tag to automatically check the box</li>
+        </ul>
+    </li>
+    <li>radio button
+        <ul>
+            <li>type="radio"</li>
+            <li>only allow 1 option to be checked</li>
+        </ul>
+    </li>
+    <li>hidden
+        <ul>
+            <li>not seen in browser</li>
+            <li>seen in HTML so not for sensitive data</li>
+        </ul>
+    </li>
+    <li>file input
+        <ul><li>type="file"</li></ul>
+    </li>
+    <li>number
+        <ul><li>has arrows</li></ul>
+    </li>
+    <li>other types:
+        <ul>
+            <li>tel</li>
+            <li>color</li>
+            <li>email</li>
+        </ul>
+    </li>
+</ol>
+
+<h4>How to pre-fill an input?</h4>
+<p>Use value attribute.</p>
+<p>value="10" means that the value in that input is 10 until user changes it</p>
+
+<h4>Access Form from JavaScript</h4>
+<p>const form = document.forms[0];</p>
+<p>const form = document.forms.name;</p>
+<p>const form = document.forms['formName'];</p>
+<p><b>another way:</b> const form = document.getElementsByTagname('form')[0];</p>
+
+<h4>Access Form Elements from JavaScript</h4>
+<p>const [input,button] = form.elements;</p>
+<p>const input = form.searchInput</p>
+<p>const input = form['searchInput']</p>
+
+<h4>Properties and Methods</h4>
+
+<h4>Submitting Forms</h4>
+<p>button type="submit"</p>
+<p>method: form.submit()<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doesn't trigger a submit event</p>
+<p><b>Turn Image into submit button:</b></p>
+<img src="week4/img/image-submit.png" alt="image as submit button code">
+
+<h4>Intercept Submitted Form in JavaScript</h4>
+<p>const form = document.forms['search']; 
+    <br> form.addEventListener ('submit', search, false);</p>
+<p>function search() {<br>
+    alert(' Form Submitted');<br>
+}</p>
+
+
+<h4>Reset Button</h4>
+<p>set button type to reset</p>
+<p>type="reset"</p>
+
+<h4>Action Property</h4>
+<p>from.action = "/an/other.url"</p>
+<p>used to set action attribute</p>
+
+<h4>Focus Event</h4>
+<p>Send pop up form.</p>
+<p>!! not working</p>
+<p>Example: <a href="week4/focus-example/focus-example.html">focus-example.html</a></p>
+
+<h4>Blur Event</h4>
+<p>Blurs part of form..</p>
+<p>input.addEventListener('blur', () => alert('blurred'), false);</p>
+
+<h4>Change Event</h4>
+<p>input.addEventListener('change', () => alert('changed'), false);</p>
+
+<h4>Retieving Form Values</h4>
+<p>For text input use .input object property.</p>
+
+<h4>Placeholder Text</h4>
+<p>Add placeholder attribuite to input tag.</p>
+<p>placeholder="Search Here"</p>
+
+<h4>Autofocus Attribute</h4>
+<p>works like focus methos</p>
+
+<h4>Set Max Length of Input</h4>
+<p>Use maxlength attribute.</p>
+
+<h4>Form Examples</h4>
+<p><b>Search Form</b></p>
+<form name='search'>
+    <input name='searchInput' placeholder="Search Here">
+    <button type='submit'>Search</button>
+</form>
+
+<p><b>Hero Input Form</b></p>
+<a href="week4/formEx/formEx.html">formEx.html</a>
+
+<h4>Chapter 8 Quiz Ninja</h4>
+<form id="response">
+    <input name="answer" type="text">
+    <button type="submit">Submit Answer</button>
+</form>
+
+<button class="nextButton">
+    <a href="week4-page2.html">Chapter 12 Notes &#8594;</a>
+</button>
+
+
+</main>
+<footer>
+    <h5>WDD 330 | Week 2 Notes | Samantha Staheli</h5>
+</footer>
+<script src="week4/chapter8.js"></script>
+</body>
+</html>

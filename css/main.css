@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+:root {
+    --main-padding: 20px;
+    --main-color: #604559;
+    --main-white: white;
+    --header-font: 'Lato', sans-serif;
+    /* --header-font: 'Tinos', serif; */
+    --body-font: 'Lato', sans-serif;
+}
+
+body {
+    font-family: var(--body-font);
+    font-size: 14px;
+    margin: auto;
+    max-width: 320px;
+    padding-left: 10px;
+}
+
+img {
+    max-width: 300px;
+}
+
+/* header */
+header {
+    background-color: var(--main-white);
+    font-weight: 700;
+    font-family: var(--header-font);
+}
+h1 {
+    font-size: 24px;
+    color: var(--main-color);
+    display: inline;
+}
+
+h2 {
+    font-size: 18px;
+    color: var(--main-color);
+}
+
+/* navigation */
+#navigation {
+    display: grid;
+    grid-template-columns: auto auto;
+    border-bottom: solid var(--main-color) 3px;
+}
+#homeTitle {
+    grid-column: 1/2;
+    font-size: 18px;
+}
+/* nav menu */
+#navDiv {
+    grid-column: 2/3;
+    align-items: end;
+    color: var(--main-color);
+}
+#nav {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+}
+.navLi {
+    padding: 10px;
+}
+
+
+/* main */
+main {
+    background-color: var(--main-white);
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+h3 {
+    font-size: 16px;
+    padding-top: 20px;
+    font-family: var(--header-font)
+}
+
+.firsth3 {
+    padding-top: 0px;
+    margin-top: 0px;
+}
+
+h4 {
+    padding-top: 10px;
+}
+
+.firsth4 {
+    padding-top: 0px;
+}
+
+p {
+    padding-left: 20px;
+}
+.example {
+    font-size: 24px;
+}
+
+.exampleText {
+    padding-left: 40px;
+    font-weight: 700;
+}
+
+.example2 {
+    padding-left: 60px;
+}
+
+/* next button */ 
+.nextButton {
+    margin-top: 40px;
+    padding: 10px;
+    color: var(--main-white);
+    background-color: var(--main-color);
+    border: solid var(--main-color) 1px;
+    border-radius: 5px;
+}
+a:link, a:visited {
+    color: var(--main-white);
+    text-decoration: none;
+}
+
+
+footer {
+    background-color: var(--main-white);
+    padding: 20px;
+    font-size: 12px;
+    text-align: center;
+}
+
+/* #list {
+    line-height: 1.5;
+}
+#mobilethumb {
+    height: 350px;
+    float: right;
+    padding: 20px;
+}
+
+.ollistitem {
+    padding-top: 20px;
+}
+
+#firstlistitem {
+    padding-top: 0px;
+}
+
+ol, ul {
+    line-height: 1.5rem;
+} */

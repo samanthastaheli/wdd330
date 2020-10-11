@@ -1,0 +1,1 @@
+input.addEventListener('blur', () => alert('blurred'), false);

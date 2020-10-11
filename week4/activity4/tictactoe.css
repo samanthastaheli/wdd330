@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+:root {
+    --grid-item-size: 75px;
+    --border: solid black 2px;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    margin: auto;
+    width: 500px;
+}
+
+/* tic tac toe grid */
+#bigDiv {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    justify-items: center;
+    align-items: center;
+}
+
+.littleDiv {
+    padding: var(--grid-item-size);
+    border: var(--border);
+}
+
+#littleDiv1 {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+#littleDiv2 {
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+#littleDiv3 {
+    grid-column: 3/4;
+    grid-row: 1/2;
+}
+#littleDiv4 {
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+#littleDiv5 {
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+#littleDiv6 {
+    grid-column: 3/4;
+    grid-row: 2/3;
+}
+#littleDiv7 {
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+#littleDiv8 {
+    grid-column: 2/3;
+    grid-row: 3/4;
+}
+#littleDiv9 {
+    grid-column: 3/4;
+    grid-row: 3/4;
+}

@@ -1,4 +1,4 @@
-// Document Objet Model
+// Document Object Model
 
 // nodes
 // like an array but not
