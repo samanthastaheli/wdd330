@@ -30,10 +30,17 @@ h2 {
     color: white;
 }
 
-li {
-    padding: 20px;
-    padding-top: 30px;
-    padding-bottom: 30px;
+main {
+    margin: auto;
+    max-width: 900px;
+}
+
+.linkList {
+    display: flex;
+}
+.linkBox {
+    width: 120px;
+    height: 120px;
     margin: 20px;
     font-size: 24px;
     list-style-type: none;

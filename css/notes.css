@@ -20,27 +20,16 @@ img {
     width: 300px;
 }
 
-/* header */
-header {
-    background-color: var(--main-white);
-    font-weight: 700;
-    font-family: var(--header-font);
-}
-
-h1 {
-    color: var(--main-color);
-}
-
-h2 {
-    font-size: 18px;
-    color: var(--main-color);
-}
-
 /* main */
 main {
     background-color: var(--main-white);
     padding-top: 20px;
     padding-bottom: 40px;
+}
+
+h2 {
+    font-size: 18px;
+    color: var(--main-color);
 }
 
 h3 {
