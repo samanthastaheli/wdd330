@@ -8,11 +8,11 @@
 body {
     font-family: 'Lato', sans-serif;
     margin: auto;
-    width: 500px;
+    max-width: 500px;
 }
 
 /* tic tac toe grid */
-#bigDiv {
+#boardDiv {
     display: grid;
     grid-template-columns: auto auto auto;
     grid-template-rows: auto auto auto;
@@ -23,6 +23,7 @@ body {
 .littleDiv {
     padding: var(--grid-item-size);
     border: var(--border);
+    margin: 0px;
 }
 
 #littleDiv1 {

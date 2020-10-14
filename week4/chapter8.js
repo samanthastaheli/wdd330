@@ -9,24 +9,24 @@
 // }
 
 // quiz ninja
-response: document.querySelector('#response');
+// response: document.querySelector('#response');
 
-start(quiz){
-    this.score = 0;
-    this.questions = [...quiz];
-    this.ask();
-}
+// start(quiz){
+//     this.score = 0;
+//     this.questions = [...quiz];
+//     this.ask();
+// }
 
-ask(name){
-    if(this.questions.length > 0) {
-        this.question = this.questions.pop();
-        const question = `What is ${this.question.name}'s real name?`;
-        view.render(view.question,question);
-    }
-    else{
-        this.gameOver();
-    }
-}
+// ask(name){
+//     if(this.questions.length > 0) {
+//         this.question = this.questions.pop();
+//         const question = `What is ${this.question.name}'s real name?`;
+//         view.render(view.question,question);
+//     }
+//     else{
+//         this.gameOver();
+//     }
+// }
 
-view.response.addEventListener('submit', (event) => game.check(event), false);
-view.hide(view.response);
+// view.response.addEventListener('submit', (event) => game.check(event), false);
+// view.hide(view.response);
