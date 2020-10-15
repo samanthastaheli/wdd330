@@ -1,19 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 
-:root {
-    --main-padding: 20px;
-    --main-color: #604559;
-    --main-white: white;
-    --header-font: 'Lato', sans-serif;
-    /* --header-font: 'Tinos', serif; */
-    --body-font: 'Lato', sans-serif;
-}
-
 body {
     font-family: var(--body-font);
     font-size: 14px;
     margin: auto;
     max-width: 320px;
+    color: var(--main-black);
 }
 
 img {
@@ -35,7 +27,8 @@ h2 {
 h3 {
     font-size: 16px;
     padding-top: 20px;
-    font-family: var(--header-font)
+    font-family: var(--header-font);
+    color: var(--main-secondary);
 }
 
 .firsth3 {
