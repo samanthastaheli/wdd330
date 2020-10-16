@@ -9,7 +9,7 @@
 #roll {
     display: block;
     margin-top: 10px;
-    background-color: rgb(255, 134, 154);
-    border: solid rgb(255, 134, 154) 4px;
+    background-color: var(--main-secondary);
+    border: solid var(--main-secondary);
     border-radius: 4px;
 }

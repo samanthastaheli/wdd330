@@ -15,14 +15,31 @@
 </head>
 <body>
     <header>
-        <div id='navigation'>
-            <h1 id='homeTitle'>WDD 330 Portfolio: Samantha Staheli</h1>
-        <div id='navDiv'>
-            <ul id='nav'>
-                <li class='navLi'><a href='index.html'>Home</a></li>
-                <li class='navLi'>Weekly Notes</li>
-            </ul>
-        </div>
+        <h1 href="index.html">WDD 330 Portfolio: Samantha Staheli</h1>
+        <div>
+            <div id="navBar">
+                <a id="homeLink" href="index.html">Home</a>
+                <div class="dropdown">
+                <button onclick="weekDropdown() " class="dropButton">Weeks<span class="material-icons">arrow_drop_down</span></button>
+                <div id="weekContent" class="dropdown-content">
+                    <a class="weekLink" href="week1.html">Week 1</a>
+                    <a class="weekLink" href="week2.html">Week 2</a>
+                    <a class="weekLink" href="week3.html">Week 3</a>
+                    <a class="weekLink" href="week4.html">Week 4</a>
+                    <a class="weekLink" href="week5.html">Week 5</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button onclick="projectDropdown() " class="dropButton">Projects<span class="material-icons">arrow_drop_down</span></button>
+                <div id="projectContent" class="dropdown-content">
+                    <a class="projectLink" href="#">Tic Tac Toe</a>
+                    <a class="projectLink" href="#">Dice</a>
+                    <a class="projectLink" href="#">To Do</a>
+                    <a class="projectLink" href="#">null</a>
+                    <a class="projectLink" href="#">null</a>
+                </div>
+            </div>
+            </div>
         </div>
     </header>
 <main>
@@ -35,19 +52,39 @@
 <h3>Chapter 12 Notes</h3>
 <h4>Object Oriented Programming</h4>
 <p>Models objects in real world.</p>
-<h4>OOP Concepts:</h4>
+<h4>3 Main OOP Concepts:</h4>
 <h4>Encapulation</h4>
 <p>Essential functions are seen, but rest is hidden in from user in code.</p>
 <h4>Polymorohism</h4>
 <p>Objects share same method and can override them with more implemntion.</p>
 <h4>Inheritence</h4>
 <p>This means that the object inherits properties from a previous object.</p>
+<h4>Classes</h4>
+<p>Go with constructor functions.</p>
+<p>Use <b style="color: var(--main-secondary);">keyword class</b></p>
+<p>Template for an object.</p>
+<h4>Constructor Property</h4>
+<p>functionName.constuctor</p>
+<p>Returns constructor function that created it.</p>
+<p><b>Make Copy of a Function:</b></p>
+<ol style="padding-left: 60px;">
+    <li>Make new function with new operator.</li>
+    <li>Use newFuncName.constructor</li>
+    <li>Change the parameter.</li>
+</ol>
+<p>Example:</p>
+<p style="padding-left: 60px;">const greenDice = new redDice.constructor(10);</p>
+<h4>Static Method</h4>
+<p>Use <b style="color: var(--main-secondary);">keyword static</b></p>
+<p>Called directly from class.</p>
+<h4>Prototype</h4>
+<p>Inheritence</p>
+<p>Property</p>
+<p></p>
 
 <h4>Dice Using Constructor Function</h4>
 <div id="dice"></div>
-<button id="roll">Roll</button>
-
-
+<button onclick="Dice" id="roll">Roll</button>
 
 <button class="nextButton">
     <a href="week4-page3.html">Chapter 15 Notes &#8594;</a>
