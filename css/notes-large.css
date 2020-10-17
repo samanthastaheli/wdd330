@@ -102,10 +102,7 @@ p {
 }
 
 footer {
-    background-color: var(--main-white);
     padding: 20px;
-    font-size: 12px;
-    text-align: center;
     margin-top: 10px;
 }
 

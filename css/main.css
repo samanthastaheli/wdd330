@@ -37,7 +37,8 @@ main {
 }
 
 .linkList {
-    display: flex;
+    display: grid;
+    grid-auto-flow: row;
 }
 .linkBox {
     width: 120px;
@@ -53,7 +54,10 @@ main {
 /* add padding and border adn border radius */
 
 footer {
-    background-color: var(--main-color);
+    color: var(--main-color);
+    background-color: var(--main-white);
+    padding: 20px;
+    font-size: 12px;
     text-align: center;
-    padding: 15px;
+    margin-top: 10px;
 }
