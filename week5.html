@@ -53,6 +53,7 @@
     <ol class="firsth4">
         <li>What is an exception error? I want to make sure I'm not misunderstanding it.</li>
         <li>What makes a function a constructor function?</li>
+        <li>How to install Jest? Terminal does not recognize npm.</li>
     </ol>
 <h3>Chapter 10 Notes: Testing and Debugging</h3>
 <h4>Error Types</h4>
@@ -98,13 +99,47 @@
     <li>URIError</li>
     <li>InternalError</li>
 </ol>
-<p></p>
+
+<h4>Throw</h4>
+<div id="sqrootDiv">
+    <p>Inset a negative number to see throw work.</p>
+    <input style="margin-left: 20px;" name="number" type="number">
+    <button onclick="squareRoot()">Calculate</button>
+    <p id="answer"></p> 
+</div>
+
+<h4>Try, Catch, Finally</h4>
+<img style="width: 400px;" src="week5/img/try catch finally example.png" alt="A example of try catch finally">
+<h4>Test a Function</h4>
+<p><b>Example:</b></p>
+<p style="padding-left: 40px;">function squareRootTest() {<br>
+    return squareRoot(25) === 5;<br>
+}<br>
+console.log(squareRootTest())</p>
+<p>Will return a boolean in the console. If true, function works.</p>
+<h4>TDD</h4>
+<p>aka test-driven development</p>
+<ol>
+    <li>Write test that initally fail</li>
+    <li>Write code to pass the test</li>
+    <li>Refractor code
+        <ul><li>Refractor means to restrcture function but don't alter functionality</li></ul>
+    </li>
+    <li>Test the refractored code</li>
+    <li>Write more tests for new additions/features</li>
+</ol>
+<h4>Jest</h4>
+<p>A TDD framework.</p>
+<p>Facebook created Jest.</p>
+<p>Instal by writing npm install -g jest in JavaScript code.</p>
+<p style="padding-left: 60px;">npm = node package manager</p>
 </div>
 </main>
 <footer>
     <h5>WDD 330 | Week 2 Notes | Samantha Staheli</h5>
 </footer>
-<script src="week4/chapter8.js"></script>
+<script src="week5/chapter10.js"></script>
+<script src="week5/numberCruncher/numberCruncher.test.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
