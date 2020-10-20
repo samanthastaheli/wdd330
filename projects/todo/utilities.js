@@ -1,8 +1,8 @@
 // get list element
-export function qs(selector){
+/* export function qs(selector){
     return document.querySelector(selector)
   
-  }
+  } */ 
   
   // Retrieve todo's from data store
   export function getFromLS(key){

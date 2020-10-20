@@ -1,5 +1,6 @@
-function squareRoot(number = document.getElementsByName('number')) {
+function squareRoot(number) {
     // 'use strict';
+    number = document.getElementsByName('number');
     if(number < 0) {
         throw new RangeError("You cannot find the sqaure root of negative numbers")
     }
