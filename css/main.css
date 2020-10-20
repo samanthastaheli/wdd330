@@ -37,8 +37,8 @@ main {
 }
 
 .linkList {
-    display: grid;
-    grid-auto-flow: row;
+    display: flex;
+    flex-wrap: wrap;
 }
 .linkBox {
     width: 120px;

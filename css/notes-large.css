@@ -13,7 +13,7 @@ body {
     margin: 0px;
     max-width: 2000px;
 }
-
+/* flex wrap */
 /* title */
 #titleDiv {
     font-size: var(--title-size);
