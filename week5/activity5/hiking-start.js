@@ -69,4 +69,3 @@ const hikeList = [
   
     return item;
   }
-  
