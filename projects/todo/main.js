@@ -3,6 +3,7 @@ import Todo from "./todo.js";
 
 qs("main").innerHTML = "Task Added!";
 
-const myTodo = new Todo("#todoList", "todos");
+// const myTodo = new Todo("#todoList", "todos"); 
 // const myOtherTodo = new Todo("#otherTodoList", "other");
 
+localStorage.setItem("#todoList", "todos");

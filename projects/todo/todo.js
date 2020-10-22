@@ -1,14 +1,5 @@
-// import { qs, saveToLS } from "./utilities.js";
+import { qs, saveToLS } from "./utilities.js";
 const todos = [];
-function saveToLS(key, data){
-    localStorage.setItem(key, JSON.stringify(data));
-}
-function saveTodos(key){
-    saveToLS(key, todos);
-}
-function qs(selector){
-    return document.querySelector(selector)
-  }
 class Todo {
     constructor(parentId, key) {
         this.listElement = qs(parentId);
@@ -25,6 +16,9 @@ class Todo {
     }
     completeTodo(todo) {}
     listTodos() {}
+    getTodos() {
+        return todos;
+    }
 }
 
 export default Todo;
