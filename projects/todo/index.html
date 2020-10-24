@@ -15,35 +15,10 @@
         <a href="index.html" id="titleHomeLink">
             <h1 href="index.html">WDD 330 Portfolio: Samantha Staheli</h1>
             </a>
-            <div>
-                <!-- <div id="navBar">
-                    <a id="homeLink" href="index.html">Home</a>
-                    <div class="dropdown">
-                    <button onclick="weekDropdown() " class="dropButton">Weeks<span class="material-icons">arrow_drop_down</span></button>
-                    <div id="weekContent" class="dropdown-content">
-                        <a class="weekLink" href="week1.html">Week 1</a>
-                        <a class="weekLink" href="week2.html">Week 2</a>
-                        <a class="weekLink" href="week3.html">Week 3</a>
-                        <a class="weekLink" href="week4.html">Week 4</a>
-                        <a class="weekLink" href="week5.html">Week 5</a>
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <button onclick="projectDropdown() " class="dropButton">Projects<span class="material-icons">arrow_drop_down</span></button>
-                    <div id="projectContent" class="dropdown-content">
-                        <a class="projectLink" href="#">Tic Tac Toe</a>
-                        <a class="projectLink" href="#">Dice</a>
-                        <a class="projectLink" href="#">To Do</a>
-                        <a class="projectLink" href="#">null</a>
-                        <a class="projectLink" href="#">null</a>
-                    </div>
-                </div>
-                </div> -->
-            </div>
         <!-- add nav bar -->
     </header>
     <main>
-        <h1 id="title">ToDo App</h1>
+        <h1 id="title">Todo App</h1>
         <form>
             <input type="text" name="todoInput" placeholder="New task...">
             <button id="addButton" type="submit"><i class="fas fa-plus-square"></i></button>
@@ -55,15 +30,20 @@
             </ul>
             <a class="clearAll" id="clearAll">Clear All</a>
         </div>
-    </main>
-    <!-- <div id="optionsBar">
-        <h2 id="tasksLeft">tasks left</h2>
-        <!-- <button id="allButton">All</button>
-        <button id="activeButton">Active</button>
-        <button id="completedButton">Completed</button> </div> -->
 
-    <!-- <i class="material-icons">check_box</i> 
-    <i class="material-icons"> -->
+        <div id="tabs">
+            <button id="allButton" class="tab" type="button">All</button>
+            <button id="activeButton" class="tab" type="button">Active</button>
+            <button id="completedButton" class="tab" type="button">Completed</button>
+            
+        </div>
+        <!-- <a class="tab" id="allButton">All</a>
+            <a class="tab" id="activeButton">Active</a>
+            <a class="tab" id="completedButton">Completed</a> -->
+    </main>
+    <!-- <footer>
+        <h5>WDD 330 | Week 2 Notes | Samantha Staheli</h5>
+    </footer> -->
 <script src="app.js"></script>
 </body>
 </html>

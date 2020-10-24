@@ -2,13 +2,11 @@
 document.querySelector('form').addEventListener('submit', handleSumbitForm);
 document.querySelector('ul').addEventListener('click', handleDeleteOrCheck);
 document.getElementById('clearAll').addEventListener('click', handleClearAll);
-// document.getElementById('activeButton').addEventListener('click', filter);
 
 // event handler function
 function handleSumbitForm(e) {
     e.preventDefault();
     let input = document.querySelector('input');
-    localStorage.setItem('input', JSON.stringify(input.value));
     if (input.value != '')
         addTodo(input.value);
         input.value = '';
@@ -25,11 +23,6 @@ function handleDeleteOrCheck(e) {
 function handleClearAll(e) {
     document.querySelector('ul').innerHTML = ''; // set ul to empty string 
 }
-
-// function filter(e) {
-//     if(e.target.name == 'activeButton')
-//         filterActive(e);
-// }
 
 // helper functions
 function addTodo(todo) {
@@ -61,24 +54,3 @@ function deleteTodo(e) {
     })
     item.classList.add('todo-list-item-fall');
 }
-
-// function filterActive() {
-//     let item = e.target.parentNode;
-//     if(item.style.textDecoration == 'line-through')
-//         display = 'none';   
-// }
-
-/* filter functions */
-
-// function filterActive() {
-//     // let active = todo-list-item.style.textDecoration == 'none';
-//     let completed = todo-list-item.style.textDecoration == 'line-through';
-//     if(completed)
-//         display = 'none'
-//     else 
-//         display = 'list-item'
-// }
-
-// let liNodes = document.querySelectorAll('li');
-// let liArray = Array.from('liNodes');
-// let activeFilter = liArray.filter('liArray');

@@ -6,7 +6,7 @@ body {
     /* background-color: #AAC9BC;  */
     background-color: var(--main-color);
     margin: 0px;
-    color: var(--main-black);
+    color: gray;
 }
 
 /* header */ 
@@ -36,7 +36,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 600px;
+    width: 450px;
     padding: 20px;
 }
 
@@ -61,6 +61,7 @@ input[type="text"] {
     color: #7B9B81;
     flex-grow: 1;
 }
+
 /* button */
 button {
     font-size: 1.5rem;
@@ -93,7 +94,11 @@ li {
     align-items: center;
     border-bottom: 1px solid lightgray;
     font-size: 16px;
-    color: gray;
+    transition: all 0.3s ease-out;
+}
+
+i {
+    pointer-events: none;
 }
 
 .todo-item {
@@ -108,13 +113,50 @@ li {
     padding: 10px 5px;
     cursor: pointer;
     font-size: 14px;
+    color: #7B9B81;
 }
 
 .clearAll:hover {
-    color: rgb(179, 81, 52);
+    color: #ECA18B;
 }
 
+/* check button */
+.todo-list-item {
+    transition: all 0.3s ease-out;
+}
 
+.todo-list-item-fall {
+    transform: translateY(12rem);
+    opacity: 0;
+}
+
+/* tabs */
+#tabs {
+    margin-top: 20px;
+}
+
+.tab {
+    background-color: white;
+    border-radius: 5px 5px 0px 0px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 14px;  
+    color: #7B9B81; 
+}
+
+.tab:hover {
+    color: #ECA18B;
+} */
+
+#allButton {
+    color: #7B9B81;
+}
+#activeButton {
+    background-color: lightgray;
+}
+#completedButton {
+    background-color: lightgray;
+}
 
 /* footer */
 footer {
@@ -123,5 +165,5 @@ footer {
     padding: 20px;
     font-size: 12px;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 300px;
 }
