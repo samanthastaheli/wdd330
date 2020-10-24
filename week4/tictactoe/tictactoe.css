@@ -1,14 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 
 :root {
-    --grid-item-size: 75px;
+    --grid-item-size: 82px;
     --border: solid black 2px;
-}
-
-body {
-    font-family: 'Lato', sans-serif;
-    margin: auto;
-    max-width: 500px;
 }
 
 /* tic tac toe grid */
@@ -23,24 +17,30 @@ body {
 .littleDiv {
     padding: var(--grid-item-size);
     border: var(--border);
-    margin: 0px;
+    margin: -1px;
 }
 
 #littleDiv1 {
     grid-column: 1/2;
     grid-row: 1/2;
+    border-top: none;
+    border-left: none; 
 }
 #littleDiv2 {
     grid-column: 2/3;
     grid-row: 1/2;
+    border-top: none;
 }
 #littleDiv3 {
     grid-column: 3/4;
     grid-row: 1/2;
+    border-top: none;
+    border-right: none;
 }
 #littleDiv4 {
     grid-column: 1/2;
     grid-row: 2/3;
+    border-left: none;
 }
 #littleDiv5 {
     grid-column: 2/3;
@@ -49,16 +49,35 @@ body {
 #littleDiv6 {
     grid-column: 3/4;
     grid-row: 2/3;
+    border-right: none;
 }
 #littleDiv7 {
     grid-column: 1/2;
     grid-row: 3/4;
+    border-bottom: none;
+    border-left: none;
 }
 #littleDiv8 {
     grid-column: 2/3;
     grid-row: 3/4;
+    border-bottom: none;
 }
 #littleDiv9 {
     grid-column: 3/4;
     grid-row: 3/4;
+    border-bottom: none;
+    border-right: none;
+}
+
+button {
+    background-color: white;
+    color: #7B9B81;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 20px 20px 20px 0px;
+}
+button:hover {
+    color: #ECA18B;
+    border: solid #ECA18B 1px;
 }

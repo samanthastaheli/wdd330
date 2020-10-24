@@ -4,14 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="tictactoe.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="colors.css">
     <title>WDD 330: Activity 4</title>
 </head>
 <body>
     <header>
-        <h1>WDD 330: Activity 4</h1>
-        <h2>Tic Tac Toe Game</h2>
+            <a href="index.html" id="titleHomeLink">
+                <h1 href="index.html">WDD 330 Portfolio: Samantha Staheli</h1>
+            </a>
     </header>
     <main>
+        <h2>Tic Tac Toe Game</h2>
         <div id="boardDiv">
             <div class="littleDiv" id="littleDiv1"></div>
             <div class="littleDiv" id="littleDiv2"></div>
@@ -25,6 +30,10 @@
         </div>
         <button id='reset'>Reset</button>
     </main>
+
+    <footer>
+        <h5>WDD 330 | Week 2 Notes | Samantha Staheli</h5>
+    </footer>
 <script>
     const resetButton = document.getElementById('reset');
     const board = document.getElementById('boardDiv');
