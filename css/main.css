@@ -27,7 +27,7 @@ h1 {
 h2 {
     font-size: 48px;
     text-align: center;
-    padding: 40px;
+    padding: 80px 40px 0px 40px;
     color: var(--main-white);
 }
 
@@ -41,14 +41,27 @@ main {
     flex-wrap: wrap;
 }
 .linkBox {
+    display: flex;
     width: 120px;
     height: 120px;
     margin: 20px;
     font-size: 24px;
     list-style-type: none;
     background-color: var(--main-white);
-    text-align: center;
+    /* text-align: center; */
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
 }
+.linkBoxLink {
+    color: var(--main-black);
+    text-decoration: none;
+}
+.linkBoxLink:hover {
+    color: var(--main-pink);
+    text-decoration: underline;
+}
+
 /* display grid in a div */
 /* make list items into grid items */
 /* add padding and border adn border radius */

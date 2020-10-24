@@ -18,12 +18,6 @@ header {
     grid-template-rows: auto;
 }
 
-/* h1 {
-    font-size: 20px;
-    padding-left: 20px;
-    color: var(--main-color);
-} */
-
 h2 {
     font-size: 48px;
     text-align: center;
@@ -43,6 +37,8 @@ main {
 #title {
     color: white;
     font-size: 36px;
+    text-align: center;
+    padding-left: 0px;
 }
 
 /* add new task input */
@@ -78,8 +74,8 @@ button:hover {
 /* todo list */
 #todoList {
     background-color: white;
-    border-radius: 5px;
-    margin-top: 20px;
+    border-radius: 0px 5px 5px 5px;
+    /* margin-top: 20px; */
     padding: 10px 25px;
     height: 100%;
 }
