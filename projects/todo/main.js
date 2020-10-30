@@ -1,9 +1,5 @@
 // import { qs, setClick } from "./utilities.js";
-import Todo from "./todo.js";
+import Todo from "./app.js";
 
-qs("main").innerHTML = "Task Added!";
-
-// const myTodo = new Todo("#todoList", "todos"); 
+const myTodo = new Todo("todos"); // new creates new instance of class 
 // const myOtherTodo = new Todo("#otherTodoList", "other");
-
-localStorage.setItem("#todoList", "todos");
