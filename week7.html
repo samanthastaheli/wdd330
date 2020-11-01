@@ -60,11 +60,71 @@
         <li>What is an example of what strict mode would do to your code?</li>
     </ol>
 <h3>Chapter 11 Notes: Further Functions</h3>
+<h4>Length</h4>
+<p>All functions have a length property.</p>
+<h4>Call</h4>
+<p>Call method sets value of this inside a function.</p>
+<p>If not using this make first argument null</p>
+<p><b>squareRoot.call( null ,  4 );</b></p>
+<p><b>.call( thisAsArgument ,  otherArgument );</b></p>
+<h4>Apply</h4>
+<p>Like call but argument is array.</p>
+<p><b>.apply( null , [4] );</b></p>
+<h4>Description</h4>
+<p>Property that allows you to describe what function does.</p>
+<h4>Cache</h4>
+<p>Property that stores values of a function so don't have to do function again.</p>
+<h4>Immediately Invoked Function Expressions</h4>
+<ul>
+    <li>aka IIFE ("iffy")</li>
+    <li>Has parentheses at end of function to invoke it.</li>
+    <li>Function is in parentheses to make it an expression.</li>
+    <li>Variables contained in scope.</li>
+    <li>Global namespace not polluted with other variables.</li>
+</ul>
+<h4>Temporary Variables</h4>
+<p>temp</p>
+<p>Undeclared after function is invoked.</p>
+<h4>Define and Rewrite</h4>
+<p>Call the function then redefine it by rewriting it inside the function.</p>
+<h4>Promises</h4>
+<p>Commitment in JavaScript</p>
+<p>2 results: completed promise or did not completes promise</p>
+<p>Parameters are resolve and reject.</p>
+<p>For resolve use .then</p>
+<p>For reject use .catch</p>
+<p>run multiple promises:</p>
+<p>	Promise.all([<br>
+    promiseVaiableOne,<br>
+    promiseVaiableTwo,<br>
+    promiseVaiableThree<br>
+]).then(message)</p>
 
+<h3>Chapter 13 Notes: AJAX</h3>
+<p>Asynchronous JavaScript A XML (now mostly java not XML).</p>
+<p>Most programming lang is synchronous, so run line by line.</p>
+<h4>XHR request</h4>
+<p>clunky not elegant </p>
+<p>jQuery.ajax()</p>
+<h4>API</h4>
+<p>Company that exposes (public or private to company) part of application.</p>
+<h4>HTTP Status Code</h4>
+<ul>
+    <li>100</li>
+    <li>200</li>
+    <li>300: worked but was redirected at some point </li>
+    <li>400: bad request, didn't understand anything, nothing made sense</li>
+    <li>404: not found, has it but you don't have right credentials </li>
+    <li>508: server was bad</li>
+</ul>
+<h4>BLOP</h4>
+<p>binary data</p>
+<p>example: lazy load img </p>
 </main>
 <footer>
     <h5>WDD 330 | Week 2 Notes | Samantha Staheli</h5>
 </footer>
 <script src="js/main.js"></script>
+<script src="week7/week7.js"></script>
 </body>
 </html>
