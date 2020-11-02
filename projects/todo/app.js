@@ -26,14 +26,14 @@ class Todo {
             text: text,
             completed: false 
         };
-        todos.push(newTodo); // push or add to array
+        todos.push(newTodo); // push or add to todos array
         saveTodos(this.key, todos);
         this.createTodo(newTodo);
     }
     checkTodo(e) {
         if(e.target.name == 'checkButton') {
             let item = e.target.parentNode;
-            let clickedTodo = findTodo(e.target.dataset.id);
+            let clickedTodo = findTodo(e.target.dataset.id); 
             if(item.style.textDecoration == 'line-through') {
                 item.style.textDecoration = 'none'; 
                 clickedTodo.completed = false;
@@ -77,10 +77,19 @@ function saveTodos(key, todo) {
     saveToLS(key, todo); 
 }
 
-function findTodo(id) { // finish 
-    return // go through array 
-        // aray method   filter   indexOf   find() better
+function findTodo(id) { // finish   
+    document.getElementsByName('checkButton');
+    todo[id];
+    // go through array 
+    // for(let i = 0; i > todos.length; i++) {
+    //      todos[i];
+    // }
+    // aray method   filter   indexOf   find() better    
+
 }
+
+// document.getElementById('completedButton').addEventListener('click', this.filterTodos);
+
 
 export default Todo;
 
