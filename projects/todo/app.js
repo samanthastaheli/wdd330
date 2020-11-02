@@ -33,7 +33,7 @@ class Todo {
     checkTodo(e) {
         if(e.target.name == 'checkButton') {
             let item = e.target.parentNode;
-            let clickedTodo = findTodo(e.target.dataset.id); 
+            let clickedTodo = findTodo(e.target.dataset.id); // !!!!! clickedTodo is always undefined 
             if(item.style.textDecoration == 'line-through') {
                 item.style.textDecoration = 'none'; 
                 clickedTodo.completed = false;
