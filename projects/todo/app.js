@@ -79,7 +79,7 @@ function saveTodos(key, todo) {
 
 function findTodo(id) { // finish   
     document.getElementsByName('checkButton');
-    todo[id];
+    todos[id];
     // go through array 
     // for(let i = 0; i > todos.length; i++) {
     //      todos[i];
