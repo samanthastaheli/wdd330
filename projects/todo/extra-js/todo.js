@@ -1,4 +1,4 @@
-import { qs, saveToLS } from "./utilities.js";
+import { qs, saveToLS } from "../utilities.js";
 const todos = [];
 class Todo {
     constructor(parentId, key) {
