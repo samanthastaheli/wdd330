@@ -33,6 +33,7 @@ class Todo {
     checkTodo(e) {
         if(e.target.name == 'checkButton') {
             let item = e.target.parentNode;
+            console.log(e.target);
             let clickedTodo = findTodo(e.target.dataset.id); // !!!!! clickedTodo is always undefined 
             if(item.style.textDecoration == 'line-through') {
                 item.style.textDecoration = 'none'; 
@@ -79,7 +80,10 @@ function saveTodos(key, todo) {
 
 function findTodo(id) { // finish   
     document.getElementsByName('checkButton');
-    todos[id];
+    return todos.find(todo => {
+        return todo.id === id;
+    }) 
+
     // go through array 
     // for(let i = 0; i > todos.length; i++) {
     //      todos[i];
