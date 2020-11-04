@@ -6,7 +6,7 @@ class Todo {
         this.key = key; // this.key is property key is var 
         this.init();
     }
-    init() {
+    init() { // initiate 
         todos = getFromLS(this.key);
         document.querySelector('form').addEventListener('submit', this.handleSumbitForm.bind(this)); // bind(this) tells to not reasign 
         document.querySelector('ul').addEventListener('click', this.checkTodo);
@@ -34,7 +34,7 @@ class Todo {
         if(e.target.name == 'checkButton') {
             let item = e.target.parentNode;
             console.log(e.target);
-            let clickedTodo = findTodo(e.target.dataset.id); // !!!!! clickedTodo is always undefined 
+            let clickedTodo = findTodo(e.target.dataset.id);  
             if(item.style.textDecoration == 'line-through') {
                 item.style.textDecoration = 'none'; 
                 clickedTodo.completed = false;
@@ -83,16 +83,17 @@ function findTodo(id) { // finish
     return todos.find(todo => {
         return todo.id === id;
     }) 
-
     // go through array 
-    // for(let i = 0; i > todos.length; i++) {
-    //      todos[i];
-    // }
     // aray method   filter   indexOf   find() better    
-
 }
 
-// document.getElementById('completedButton').addEventListener('click', this.filterTodos);
+document.getElementById('completedButton').addEventListener('click', filterCompleted);
+
+function filterCompleted() {
+    if(todos.completed = 'false') {
+        todos.style.display = 'none';
+    }
+}
 
 
 export default Todo;
