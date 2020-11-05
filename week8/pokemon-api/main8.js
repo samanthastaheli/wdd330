@@ -17,18 +17,18 @@ function getPokemon(url) {
 }
 
 // does same thing as getPokemon
-async function getPokemonAsync(url) {
-    let pokemon = await fetch(url).then(convertToJson);
+// async function getPokemonAsync(url) {
+   // let pokemon = await fetch(url).then(convertToJson);
         /* or do: 
             let response = await fetch(url);
             let pokemon = await fetch(url).then(response);
         */
-}
+// }
 
-async function getPokemonAsyncTwo(url) {
+async function getPokemonAsync(url) {
     let pokemon = await fetch(url).then(convertToJson);
     console.log(pokemon.pokemon);
-    displayPokemon(pokemon.pokemon);
+    displayPokemon(pokemon.pokemon); 
 }
 
 function displayPokemon(list) {
@@ -41,17 +41,26 @@ function displayPokemon(list) {
     // console.log(newArray);
 }
 
-function displayDetails(details) {
-    let details = 
-}
-
-async function pokemonClicked(event) { // func needs to be called somewhere 
+async function pokemonClicked(details) { // func needs to be called somewhere 
     console.log(event.target.dataset.url); // is li
     console.log(event.currentTarget); // is ul, thing listener is attached too
     const details = await fetch(event.target.dataset.url).then(convertToJson); // is getting url from line above not the url declared at to of doc
     console.log(details);
     displayDetails(details);
+
+    document.querySelector(".name").innerHTML = data.name;
+    document.querySelector(".number").innerHTML = data.id;
+    document.querySelector(".pokeimg").src = data.sprites.front_default;
 }
+
+function displayDetails(event) {
+    getPokemonDetails(event.target.dataset.url);
+}
+
+function hideDetails() {
+
+}
+
 
 document.getElementById('listElement').addEventListener('click', pokemonClicked); // called here 
 getPokemonAsyncTwo(url); // pass in url 
@@ -60,7 +69,7 @@ getPokemonAsyncTwo(url); // pass in url
 // get the pokemon clicked api into json and objects
 // display the pokemons detils on page (new page or same?) 
     // could display none the list and just display the detials
-
+    // then when click back button display the 
 
 
 
