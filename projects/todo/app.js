@@ -87,13 +87,27 @@ function findTodo(id) { // finish
     // aray method   filter   indexOf   find() better    
 }
 
+// function findCompletedTodo(completed) { // finish   
+//     document.getElementsByName('checkButton');
+//     return todos.find(todo => {
+//         let todo = todo.completed === completed;
+//         return todo;
+//     }) 
+//     // go through array 
+//     // aray method   filter   indexOf   find() better    
+// }
+
 document.getElementById('completedButton').addEventListener('click', filterCompleted);
 
-function filterCompleted() {
-    if(todos.completed = 'false') {
-        todos.style.display = 'none';
+function filterCompleted(e) {
+        let todo = findCompletedTodo(e.target.dataset.completed); 
+
+        if(todo = 'false') {
+            todo.style.display = 'none';
+        }
     }
-}
+        
+
 
 
 export default Todo;
