@@ -41,16 +41,27 @@ function displayPokemon(list) {
     // console.log(newArray);
 }
 
+function displayDetails(details) {
+    let details = 
+}
+
 async function pokemonClicked(event) { // func needs to be called somewhere 
     console.log(event.target.dataset.url); // is li
     console.log(event.currentTarget); // is ul, thing listener is attached too
     const details = await fetch(event.target.dataset.url).then(convertToJson); // is getting url from line above not the url declared at to of doc
     console.log(details);
-    // displayDetails(details);
+    displayDetails(details);
 }
 
 document.getElementById('listElement').addEventListener('click', pokemonClicked); // called here 
 getPokemonAsyncTwo(url); // pass in url 
+
+
+// get the pokemon clicked api into json and objects
+// display the pokemons detils on page (new page or same?) 
+    // could display none the list and just display the detials
+
+
 
 
 /* function then(callback) { // this function is deep in browsers js
