@@ -1,5 +1,5 @@
 const url = "https://pokeapi.co/api/v2/type/3";
-
+ 
 function convertToJson(response) { // response is an argument 
     if(response.ok) {
         return response.json();
@@ -34,21 +34,22 @@ async function getPokemonAsyncTwo(url) {
 function displayPokemon(list) {
     const listElement = document.getElementById('listElement');
     const newArray = list.map((item) => {
-        return `<li data-url="${item.pokemon.url}">${item.pokemon.name}</li>` // data-url is attribute 
+        return `<li data-url="${item.pokemon.url}">${item.pokemon.name}</li>` // data-url is attribute
+        // return `<li><a href="${item.pokemon.url}">${item.pokemon.name}</a></li>` // when clicked displays Json
     }); // join makes the array of strings into one big string 
     listElement.innerHTML = newArray.join(""); // putting empty quotes in join makes comma go away 
     // console.log(newArray);
 }
 
-async function pokemonClicked(event) {
+async function pokemonClicked(event) { // func needs to be called somewhere 
     console.log(event.target.dataset.url); // is li
-    // console.log(event.currentTarget); // is ul, thing listener is attached too
+    console.log(event.currentTarget); // is ul, thing listener is attached too
     const details = await fetch(event.target.dataset.url).then(convertToJson); // is getting url from line above not the url declared at to of doc
     console.log(details);
-    displayDetails(details);
+    // displayDetails(details);
 }
 
-document.getElementById('listElement').addEventListener('click', pokemonClicked);
+document.getElementById('listElement').addEventListener('click', pokemonClicked); // called here 
 getPokemonAsyncTwo(url); // pass in url 
 
 
