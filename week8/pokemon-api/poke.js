@@ -28,7 +28,7 @@ function getPokemon(url) {
 async function getPokemonAsync(url) {
     let pokemon = await fetch(url).then(convertToJson);
     console.log(pokemon.pokemon);
-    displayPokemon(pokemon.pokemon); 
+    displayPokemon(pokemon.pokemon); // get pok
 }
 
 function displayPokemon(list) {
@@ -41,29 +41,49 @@ function displayPokemon(list) {
     // console.log(newArray);
 }
 
-async function pokemonClicked(details) { // func needs to be called somewhere 
+async function pokemonClicked() { // func needs to be called somewhere 
     console.log(event.target.dataset.url); // is li
     console.log(event.currentTarget); // is ul, thing listener is attached too
     const details = await fetch(event.target.dataset.url).then(convertToJson); // is getting url from line above not the url declared at to of doc
     console.log(details);
-    displayDetails(details);
+    getPokemonDetails(details);
 
-    document.querySelector(".name").innerHTML = data.name;
-    document.querySelector(".number").innerHTML = data.id;
-    document.querySelector(".pokeimg").src = data.sprites.front_default;
+    // document.querySelector(".name").innerHTML = pokemon.name; // was data.name and data.id
+    // document.querySelector(".number").innerHTML = pokemon.id;
+    // document.querySelector(".pokeimg").src = data.sprites.front_default;
 }
 
-function displayDetails(event) {
+async function displayDetails(event) {
+    const list = document.querySelector(".listbox");
+    const details = document.getElementById("detailsbox");
     getPokemonDetails(event.target.dataset.url);
+
+    list.style.transform = "translateX(-100vw)";
+    details.style.transform = "translateX(-100vw)";
 }
 
-function hideDetails() {
+async function hideDetails() {
+    const list = document.querySelector(".listbox");
+    const details = document.getElementById("detailsbox");
 
+    list.style.transform = "translateX(0)";
+    details.style.transform = "translateX(100vw)";
 }
 
+function getPokemonDetails(url) {
+    getPokemon(url).then(function(pokemon) { // getPokemon of converToJson
+        document.querySelector('.name').innerHTML = pokemon.name;
+        document.querySelector('.species').innerHTML = pokemon.species;
+        document.querySelector('.number').innerHTML = pokemon.number;
+        document.querySelector('.stats').innerHTML = pokemon.stats;
+        // get img 
+    });
+}
 
 document.getElementById('listElement').addEventListener('click', pokemonClicked); // called here 
-getPokemonAsyncTwo(url); // pass in url 
+getPokemonAsync(url); // pass in url 
+const backButtton = document.getElementById('back');
+backButtton.addEventListener('click', hideDetails);
 
 
 // get the pokemon clicked api into json and objects
