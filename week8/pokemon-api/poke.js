@@ -8,8 +8,8 @@ function convertToJson(response) { // response is an argument
     }
 }
 
-function getPokemon(url) {
-    fetch(url)
+function getPokemon(urlAll) {
+    fetch(urlAll)
         .then(convertToJson)
         .then((data) => { // fetch returns promise use then to use promise
             pokemon = data.pokemon;
@@ -25,8 +25,8 @@ function getPokemon(url) {
         */
 // }
 
-async function getPokemonAsync(url) {
-    let pokemon = await fetch(url).then(convertToJson);
+async function getPokemonAsync(urlAll) {
+    let pokemon = await fetch(urlAll).then(convertToJson);
     console.log(pokemon.pokemon);
     displayPokemon(pokemon.pokemon); // get pok
 }
@@ -82,8 +82,7 @@ function getPokemonDetails(url) {
 
 document.getElementById('listElement').addEventListener('click', pokemonClicked); // called here 
 getPokemonAsync(url); // pass in url 
-const backButtton = document.getElementById('back');
-backButtton.addEventListener('click', hideDetails);
+document.getElementById('back').addEventListener('click', hideDetails);
 
 
 // get the pokemon clicked api into json and objects
