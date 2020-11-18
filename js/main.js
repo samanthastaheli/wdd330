@@ -1,17 +1,31 @@
-// const links = [
-//     {  
-//         label: 'Week1',
-//         url: 'week1.html'
-//     },
-//     {
-//         label: 'Week2',
-//         url: 'week2.html'
-//     },
-//     {
-//         label: 'Week3',
-//         url: 'week3.html'
-//     }
-// ];
+const week = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+
+const weekButton = document.getElementById('weekButton')
+
+weekButton.addEventListener('click', weekContentCreator);
+
+function createAElement(weekNo) {
+    
+}
+
+function weekContentCreator() {
+    for(let i = 0; i > week.length; i++) {
+        let weekNo = week[i];
+        const linksDiv = document.getElementById('weekContent');
+    const a = linksDiv.innerHTML = `
+        <a class="weekLink" href="week${weekNo}.html">Week ${weekNo}</a>
+    `;
+    linksDiv.appendChild(a);
+    }
+}
+
+
+
+
+
+
+
+
 
 // function renderlinkList(list) {
 //     const listElement = document.querySelector('#linkList');
