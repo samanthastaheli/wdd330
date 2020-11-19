@@ -8,9 +8,12 @@ function convertToJson(response) { // response is an argument
     }
 }
 
-function getPokemon(urlAll) {
-    fetch(urlAll)
-        .then(convertToJson)
+function getPokemon(url) {
+    fetch(url)
+        .then((response) => {
+            console.log(response);
+            //convertToJson(response);
+        })
         .then((data) => { // fetch returns promise use then to use promise
             pokemon = data.pokemon;
     });  
@@ -44,22 +47,26 @@ function displayPokemon(list) {
 async function pokemonClicked() { // func needs to be called somewhere 
     console.log(event.target.dataset.url); // is li
     console.log(event.currentTarget); // is ul, thing listener is attached too
-    const details = await fetch(event.target.dataset.url).then(convertToJson); // is getting url from line above not the url declared at to of doc
-    console.log(details);
-    getPokemonDetails(details);
+    await fetch(event.target.dataset.url).then((response)=> {
+        let details = convertToJson(response);
+        
+        details.then((response) => { // .then resolved promise 
+            getPokemonDetails(response);
+        })
+    }); // is getting url from line above not the url declared at to of doc
 
     // document.querySelector(".name").innerHTML = pokemon.name; // was data.name and data.id
     // document.querySelector(".number").innerHTML = pokemon.id;
     // document.querySelector(".pokeimg").src = data.sprites.front_default;
 }
 
-async function displayDetails(event) {
-    const list = document.querySelector(".listbox");
-    const details = document.getElementById("detailsbox");
-    getPokemonDetails(event.target.dataset.url);
+async function displayDetails() {
+    document.getElementById("listbox").style.transform = "translateX(-1500px)";
+    document.getElementById("detailsbox").style.transform = "translateX(-1500px)";
+    //getPokemonDetails(event.target.dataset.url);
 
-    list.style.transform = "translateX(-100vw)";
-    details.style.transform = "translateX(-100vw)";
+    //list.style.transform = "translateX(-100vw)";
+    //details.style.transform = "translateX(-100vw)";
 }
 
 async function hideDetails() {
@@ -70,14 +77,13 @@ async function hideDetails() {
     details.style.transform = "translateX(100vw)";
 }
 
-function getPokemonDetails(url) {
-    getPokemon(url).then(function(pokemon) { // getPokemon of converToJson
+function getPokemonDetails(pokemon) {
         document.querySelector('.name').innerHTML = pokemon.name;
-        document.querySelector('.species').innerHTML = pokemon.species;
-        document.querySelector('.number').innerHTML = pokemon.number;
-        document.querySelector('.stats').innerHTML = pokemon.stats;
-        // get img 
-    });
+        //document.querySelector('.species').innerHTML = pokemon.species;
+        document.querySelector('.number').innerHTML = pokemon.id;
+        //document.querySelector('.stats').innerHTML = pokemon.stats;
+        // get img
+        displayDetails();
 }
 
 document.getElementById('listElement').addEventListener('click', pokemonClicked); // called here 

@@ -2,8 +2,52 @@
 
 body {
     font-family: 'Roboto Slab', sans-serif;
+    color: #3B4CCA;
+    margin: auto;
+    max-width: 1000px;
+    text-align: center;
 }
 
-main {
-    
+h1 {
+    font-size: 36px;
 }
+
+h2 {
+    font-size: 20px;
+}
+
+.detailsbox {
+    flex: 1 0 15em;
+    padding: 1em;
+    text-align: center;
+    border: 2px solid #3B4CCA;
+    transform: translateX(1500px);
+}
+
+.detailsbox dl {
+    border: 1px solid;
+    text-align: left;
+}
+
+#listElement {
+    border: 5px solid #3B4CCA;
+    border-radius: 10px;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+  li {
+      margin: 5px;
+      background-color: #FFDE00;
+      padding: 5px; 
+      border: 3px solid #3B4CCA;
+      border-radius: 5px;
+      width: 200px;
+      text-align: center;
+  }
+
+  li:hover {
+      background-color: #B3A125;
+  }
+
