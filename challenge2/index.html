@@ -3,14 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Star Wars Quiz App</title>
 </head>
 <body>
-<head>
+<header>
     <h1>STAR WARS</h1>
-</head>
+    <h2>Who would you be in the Star Wars universe?</h2>
+    <h3>Take the quiz to find out</h3>
+</header>
 <main>
+    <div id="container">
+        <form>
+            <div id="nameDiv" class="questionDiv">
+                <label>Name:
+                    <input name="name" type="text" placeholder="Your name...">
+                </label>
+            </div>
+            
+            <div id="genderDiv" class="questionDiv">
+                <label>Gender:
+                    <input name="gender" list="gender">
+                    <datalist id="gender">
+                        <option value="Female" name="female"></option>
+                        <option value="Male" name="male"></option>
+                    </datalist>
+                </label>
+            </div>
+            
+            <div id="ageDiv" class="questionDiv">
+                <label>Age:
+                    <input name="age" type="number" placeholder="Your age...">
+                </label>
+            </div>
 
+            <div id="empOrRepDiv" class="questionDiv">
+                <label>Whose side are you on?
+                    <input list="empOrRep" name="empOrRep">
+                    <datalist id="empOrRep">
+                        <option value="Empire" name="empire"></option>
+                        <option value="Republic" name="republic"></option>
+                    </datalist>
+                </label>
+            </div>
+
+            <div id="lsDiv" class="questionDiv">
+                <label class="topLabel">How are your light saber skills?</label>
+                <label>
+                    <input type="radio" name="lsMaster" value="I am a master">
+                    I am a master
+                </label>
+                <label>
+                    <input type="radio" name="lsBeginner" value="I am a beginner">
+                    I am a beginner
+                </label>
+                <label>
+                    <input type="radio" name="lsGun" value="No light sabers for me, I'll stick to guns">
+                    No light sabers for me, I'll stick to guns
+                </label>
+                <label>
+                    <input type="radio" name="lsNone" value="I don't use weapons">
+                    I don't use weapons
+                </label>
+                <label>
+                    <input type="radio" name="lsQuestion" value="What's a light saber?">
+                    What's a light saber?
+                </label>
+            </div>
+
+            <div id="landDiv" class="questionDiv">
+                <label class="topLabel">What do you prefer?</label>
+                <label>Sand
+                    <input type="radio" name="sand" value="sand">
+                </label>
+                <label>Forest
+                    <input type="radio" name="forest" value="forest">
+                </label>
+                <label>Snowy Mountains
+                    <input type="radio" name="snowMt" value="snowy mtn">
+                </label>
+                <label>Ships only
+                    <input type="radio" name="ships" value="ships only">
+                </label>
+            </div>
+            
+            <div id="landDiv" class="questionDiv">
+                <label class="topLabel" name="pet">What pet would you want?</label>
+                <label>The child
+                    <input type="radio" name="child" value="the child">
+                </label>
+                <label>Banthas
+                    <input type="radio" name="banthas" value="banthas">
+                </label>
+                <label>Tauntaun
+                    <input type="radio" name="tauntaun" value="tauntaun">
+                </label>
+                <label>Crazy snow spider
+                    <input type="radio" name="spider" value="crazy snow spider">
+                </label>
+                <label>Astromech droid 
+                    <input type="radio" name="astromech" value="astromech droid">
+                </label>
+                <label>Protocol droid
+                    <input type="radio" name="protocol" value="protocol droid">
+                </label>
+                <label>Tauntaun
+                    <input type="radio" name="tauntaun" value="tauntaun">
+                </label>
+                <label>Geejaw
+                    <input type="radio" name="geejaw" value="geejaw">
+                </label>
+                <label>Porg
+                    <input type="radio" name="porg" value="porg">
+                </label>
+                <label>Ewok
+                    <input type="radio" name="ewok" value="ewok">
+                </label>
+            </div>
+    <!-- which is better datalist or radio ?? -->
+            <div id="speciesDiv" class="questionDiv">
+                <label>What species/race do you resinate with?
+                    <input list="species" name="species">
+                    <datalist id="species">
+                        <option value="Jedi" name="jedi"></option>
+                        <option value="Mandalorian" name="mandalorian"></option>
+                        <option value="Wookie" name="wookie"></option>
+                        <option value="Jawa" name="jawa"></option>
+                        <option value="Droid" name="droid"></option>
+                        <option value="Acokas species" name="acokas"></option>
+                        <option value="Ewok" name="ewok"></option>
+                        <option value="Tusken Raiders" name="tusken"></option>
+                    </datalist>
+                </label>
+            </div>
+        </form>
+        <button type="submit">Submit</button>
+    </div>
 </main>
 </body>
 </html>
