@@ -57,9 +57,200 @@
 <div id="content">
     <h3>Questions</h3>
     <ol class="firsth4">
-        <li>When reading cookies, why is there a colon instead of semi colon? (document.cookie:)</li>
+        <li></li>
     </ol>
 
+    <h3>Validating Forms</h3>
+    <h4>Form validation</h4>
+    <p>When data is entered in a form the browser or  web server will check to see if data is in correct format or filled out.</p>
+    <h4>Common Web Threats</h4>
+    <ol>
+        <li>XSS (cross-site scripting)
+            <ul><li>attack that adds client-side scripts through the website and into browser of other users</li>
+                <ul><li>client-side script: code that exist inside client's HTML page</li></ul>
+            </ul>
+        </li>
+        <li>SQL Injection
+            <ul><li>access, modify, or delete data from a database by writing new sql statements</li></ul>
+        </li>
+        <li>CSRF (cross-site request forgery)
+            <ul><li>hacker gets users credentials by sending form with hidden fields</li><li>once user hits a submit button (while logged into site) a post request is made and hacker gets users cookies</li></ul>
+        </li>
+    </ol>
+
+    <h3>Client-side Validation Types</h3>
+    <p>bult-in</p>
+    <p>JavaScript</p>
+
+    <h3>Built-in form validation</h3>
+    <p>HTML5's form validation features</p>
+    <p>Performs better than JavaScript but not as customizable. </p>
+
+    <h4>form element validation attributes:</h4>
+    <ul>
+        <li>required:</li>
+        <li>minlength: and maxlength: </li>
+        <li>min: and max: <ul>
+            <li>for numerical inputs </li>
+            <li>specifies minimum and maximum values</li></ul>
+        </li>
+        <li>type:
+            <ul>
+                <li>text</li>
+                <li>number</li>
+                <li>email</li>
+            </ul>
+        </li>
+        <li>pattern:
+            <ul>
+                <li>specifies what regExp</li>
+                <li>textarea doesn't support pattern </li>
+            </ul>
+        </li>
+    </ul>
+
+    <h4>:valid</h4>
+    <p>CSS pseudo-class</p>
+    <p>*pseudo-class: keyword added to CSS selector to specify a certain state of an element </p>
+    <p>input tag</p>    
+    <p>specifies valid elements </p>
+    <h4>:invalid</h4>
+    <p>specifies the invalid elements</p>
+    <p>input tag</p>
+    <h4>:out-of-range</h4>
+    <p>CSS pseudo-class </p>
+    <p>input tag</p>    
+    <p>specifies input that is out of range of limits specified </p>
+
+    <h4>form submission errors</h4>
+    <ol>
+        <li>badInput</li>
+        <li>patternMismatch</li>
+        <li>rangeOverflow</li>
+        <li>rangeUnderflow</li>
+        <li>stepMismatch</li>
+        <li>tooLong</li>
+        <li>tooShort</li>
+        <li>typeMismatch</li>
+        <li>valueMissing</li>
+        <li>customError</li>
+    </ol>
+
+    <h4>Regular Expression </h4>
+    <p><b>regexp</b></p>
+    <ul>
+        <li>a
+            <ul>
+                <li>match one character</li>
+                <li>result: a</li>
+            </ul>
+        </li>
+        <li>abc
+            <ul>
+                <li>matches abc</li>
+                <li>result: abc</li>
+            </ul>
+        </li>
+        <li>ab?c
+            <ul>
+                <li>matches a</li>
+                <li>b is optional</li>
+                <li>c after a or b</li>
+                <li>results: ac or abc</li>
+            </ul>
+        </li>
+        <li>ab*c
+            <ul>
+                <li>matches a</li>
+                <li>a followed by any number of b</li>
+                <li>then c</li>
+                <li>results: ac, abc, abbbbbc</li>
+            </ul>
+        </li>
+        <li>a | b
+            <ul>
+                <li>matches either character&nbsp;</li>
+                <li>results: a or b</li>
+            </ul>
+        </li>
+        <li> abc | xyz</p>
+            <ul>
+                <li>matches either set of characters</li>
+                <li>results: abc or xyz</li>
+            </ul>
+        </li>
+            <ul>
+                <li>[Bb]anna | [Cc]herry</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>Validating Forms with JavaScript</h3>
+    <h4>Constraint Validation API</h4>
+    <p><b>element DOM interface:</b></p>
+    <ol>
+        <li>HTMLButtonElement</li>
+        <li>HTMLFieldSetElement</li>
+        <li>HTMLInputElement</li>
+        <li>HTMLOutputElement</li>
+        <li>HTMLSelectElement</li>
+        <li>HTMLTextAreaElement</li>
+    </ol>
+
+    <h3>Fetch</h3>
+    <p><b>Fetch is a promise.</b></p>
+    <h4>Fetch Options</h4>
+    <ol>
+        <li>method</li>
+        <li>HTTP header</li>
+        <li>body</li>
+        <li>credentials</li>
+        <li>cors</li>
+    </ol>
+    <h4>Basic fetch request</h4>
+    <p>fetch('http://example.com/movies.json')<br>
+        &emsp;.then(response => response.json())<br>
+        &emsp;.then(data => console.log(data));</p>
+
+    <h3>Credentials</h3>
+    <p>To make a request require credentials use keyword include.</p>
+    <h4>Other keywords</h4>
+    <ul>
+        <li>same-origin
+            <ul><li>use if request url is on the same origin as calling script<ul><li>calling script: </li></ul></li></ul>
+        </li>
+        <li>omit<ul><li>use to not include credentials </li></ul></li>
+    </ul>
+    <p>fetch(url, {<br>
+        credentials: 'include'<br>
+    });<br>
+    <br>
+    fetch(url, {<br>
+        &emsp;credentials: 'same-origin'<br>
+    });<br>
+    <br>
+    fetch(url, {<br>
+        &emsp;credentials: 'omit'<br>
+    });</p>
+
+    <h3>Uploading JSON data</h3>
+    <p>Use fetch() to POST JSON-encoded data.</p>
+
+    <h3>Uploading  files</h3>
+    <ol>
+        <li>< input  type="file"  /><ul>
+            <li>upload multiple:<ul>
+                <li>< input  type="file"  multiple  /></li>
+            </ul></li>
+        </ul></li>
+        <li>FormData()</li>
+        <li>3. fetch()</li>
+    </ol>
+
+    <h3>fetch errors</h3>
+    <p>When network has error or CORS is misconfigured on server-side fetch promise returns TypeError.</p>
+    <h4>Check for errors</h4>
+    <p>check if request.ok property is true or false</p>
 </main>
 <footer>
     <h5>WDD 330 | Week 10 Notes | Samantha Staheli</h5>
