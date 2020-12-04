@@ -3,6 +3,8 @@
 :root {
     --black: #131412;
     --yellow: #F8BF17;
+    --drk-gray: #221a27; 
+    --gray: lightgray;
     --ls-green: #6FBF44;
     --ls-blue: #4290CD;
     --ls-yellow: #D5C440;
@@ -16,13 +18,16 @@
 body {
     font-family: 'Lato', sans-serif;
     background-color: black;
-    color: var(--yellow);
+    color: var(--ls-white);
     margin: auto;
-    max-width: 300px;
+    min-width: 300px;
+    max-width: 800px;
 }
 
 header {
     text-align: center;
+    color: var(--yellow);
+    margin: 20px;
 }
 
 #container {
@@ -30,9 +35,36 @@ header {
     padding: 20px;
     border: 5px solid var(--yellow);
     border-radius: 5px;
+    margin: 20px;
+}
+
+h4 {
+    display: block;
+    font-size: 18px;
+    margin-top: 30px;
+    margin-bottom: 5px;
+    color: var(--ls-green);
+}
+
+#firstQuestionh4 {
+    margin-top: 0px;
 }
 
 label {
     display: block;
-    padding-bottom: 20px;
+    line-height: 1.5rem;
+}
+
+#submit {
+    margin: 20px 20px 20px 0px;
+    padding: 5px;
+    border-radius: 15px;
+    border: 3px solid var(--ls-purple);
+    color: var(--ls-purple);
+    background-color: var(--drk-gray);
+}
+#submit:hover {
+    border: 3px solid var(--ls-purple);
+    color: var(--drk-gray);
+    background-color: var(--ls-purple);
 }

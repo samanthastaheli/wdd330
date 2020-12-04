@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="main.js" type="module"></script>
     <title>Star Wars Quiz App</title>
 </head>
 <body>
@@ -14,41 +15,65 @@
 </header>
 <main>
     <div id="container">
-        <form>
+        <div id="quiz"></div>
+        <button id="submit">Submit Quiz</button>
+        <div id="results"></div>
+    </div>    
+        <!-- <form>
             <div id="nameDiv" class="questionDiv">
-                <label>Name:
+                <h4 class="question">Name:</h4>
                     <input name="name" type="text" placeholder="Your name...">
-                </label>
             </div>
             
             <div id="genderDiv" class="questionDiv">
-                <label>Gender:
+                <h4 class="question">Gender:</h4>
                     <input name="gender" list="gender">
                     <datalist id="gender">
                         <option value="Female" name="female"></option>
                         <option value="Male" name="male"></option>
                     </datalist>
-                </label>
             </div>
             
             <div id="ageDiv" class="questionDiv">
-                <label>Age:
+                <h4 class="question">Age:</h4>
                     <input name="age" type="number" placeholder="Your age...">
-                </label>
-            </div>
+            </div> -->
 
-            <div id="empOrRepDiv" class="questionDiv">
-                <label>Whose side are you on?
-                    <input list="empOrRep" name="empOrRep">
+            <!-- <div id="empOrRepDiv" class="questionDiv">
+                <h4 id="firstQuestionh4" class="question">Whose side are you on?</h4>
+                <label>
+                    <input type="radio" name="empire" value="empire">
+                    Empire
+                </label>
+                <label>
+                    <input type="radio" name="republic" value="republic">
+                    Republic
+                </label>
+                    <!-- <input list="empOrRep" name="empOrRep">
                     <datalist id="empOrRep">
                         <option value="Empire" name="empire"></option>
                         <option value="Republic" name="republic"></option>
-                    </datalist>
+                    </datalist> 
+            </div>
+
+            <div id="favDiv" class="questionDiv">
+                <h4 class="question">Who is your favorite character?</h4>
+                <label>
+                    <input type="radio" name="hanSolo" value="han solo">
+                    Han Solo
+                </label>
+                <label>
+                    <input type="radio" name="vadar" value="darth vadar">
+                    Darth Vader
+                </label>
+                <label>
+                    <input type="radio" name="luke" value="luke skywalker">
+                    Luke Skywalker                
                 </label>
             </div>
 
             <div id="lsDiv" class="questionDiv">
-                <label class="topLabel">How are your light saber skills?</label>
+                <h4 class="question">How are your light saber skills?</h4>
                 <label>
                     <input type="radio" name="lsMaster" value="I am a master">
                     I am a master
@@ -72,57 +97,71 @@
             </div>
 
             <div id="landDiv" class="questionDiv">
-                <label class="topLabel">What do you prefer?</label>
-                <label>Sand
+                <h4 class="question">What do you prefer?</h4>
+                <label>
                     <input type="radio" name="sand" value="sand">
+                    Sand
                 </label>
-                <label>Forest
+                <label>
                     <input type="radio" name="forest" value="forest">
+                    Forest
                 </label>
-                <label>Snowy Mountains
+                <label>
                     <input type="radio" name="snowMt" value="snowy mtn">
+                    Snowy Mountains
                 </label>
-                <label>Ships only
+                <label>
                     <input type="radio" name="ships" value="ships only">
+                    Ships only
                 </label>
             </div>
             
             <div id="landDiv" class="questionDiv">
-                <label class="topLabel" name="pet">What pet would you want?</label>
-                <label>The child
+                <h4 class="question">What pet would you want?</h4>
+                <label>
                     <input type="radio" name="child" value="the child">
+                    The child
                 </label>
-                <label>Banthas
+                <label>
                     <input type="radio" name="banthas" value="banthas">
+                    Banthas
                 </label>
-                <label>Tauntaun
+                <label>
                     <input type="radio" name="tauntaun" value="tauntaun">
+                    Tauntaun
                 </label>
-                <label>Crazy snow spider
+                <label>
                     <input type="radio" name="spider" value="crazy snow spider">
+                    Crazy snow spider
                 </label>
-                <label>Astromech droid 
+                <label>
                     <input type="radio" name="astromech" value="astromech droid">
+                    Astromech droid 
                 </label>
-                <label>Protocol droid
+                <label>
                     <input type="radio" name="protocol" value="protocol droid">
+                    Protocol droid
                 </label>
-                <label>Tauntaun
+                <label>
                     <input type="radio" name="tauntaun" value="tauntaun">
+                    Tauntaun
                 </label>
-                <label>Geejaw
+                <label>
                     <input type="radio" name="geejaw" value="geejaw">
+                    Geejaw
                 </label>
-                <label>Porg
+                <label>
                     <input type="radio" name="porg" value="porg">
+                    Porg
                 </label>
-                <label>Ewok
+                <label>
                     <input type="radio" name="ewok" value="ewok">
+                    Ewok
                 </label>
             </div>
-    <!-- which is better datalist or radio ?? -->
+
             <div id="speciesDiv" class="questionDiv">
-                <label>What species/race do you resinate with?
+                <h4 class="question">What species/race do you resinate with?</h4>
                     <input list="species" name="species">
                     <datalist id="species">
                         <option value="Jedi" name="jedi"></option>
@@ -134,11 +173,10 @@
                         <option value="Ewok" name="ewok"></option>
                         <option value="Tusken Raiders" name="tusken"></option>
                     </datalist>
-                </label>
             </div>
 
             <div id="importantDiv" class="questionDiv">
-                <label>What is most important?
+                <h4 class="question">What is most important?</h4>
                     <input list="important" name="important">
                     <datalist id="important">
                         <option value="family" name="family"></option>
@@ -150,11 +188,9 @@
                         <option value="bring people back from the dead" name="dead"></option>
                         <option value="falling in love" name="love"></option>
                     </datalist>
-                </label>
             </div>
         </form>
-        <button type="submit">Submit</button>
-    </div>
+        <button type="submit">Submit</button> -->
 </main>
 </body>
 </html>
