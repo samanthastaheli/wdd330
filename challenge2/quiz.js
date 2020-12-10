@@ -1,25 +1,12 @@
+// imports
+import { getRandomNum } from './utilities.js';
+
 // Variables 
 const quizContainer = document.getElementById('quiz');
 const resultsContainer = document.getElementById('results');
 const submitButton = document.getElementById('submit'); 
+const resetButton = document.getElementById('reset');
 const baseUrl = "https://swapi.dev/api/";
-
-// Helper Functions
-// get JSON with helper function
-export function getJSON(url) {
-    return fetch(url).then(function (response) { // what gets passed through respose ???
-        if (!response.ok) { // ! operator mean logical not, what does .ok mean ???
-            throwError(response.statusText); 
-        } else {
-            return response.json(); // json() reads response 
-                                   //returns promise
-                                  //resolves with the parsed string of respose as JSON
-        }
-    })
-    .catch(function (error) { // what passes through error 
-        console.log(error)
-    });
-}
 
 // Functions
 // create the questions
@@ -28,7 +15,7 @@ export function buildQuiz() {
     myQuestions.forEach((currentQuestion, questionNumber) => {
         const options = []; // var to store list of possible options
         for(let i in currentQuestion.options){// for loop to create html for possible answers
-            console.log(i);
+            // console.log(i);
           // add html radion button
           options.push(
             `<label>
@@ -51,42 +38,65 @@ export function buildQuiz() {
 
 // get answers
 // activated by sumbmit btn event listener in main.js
-export function getAnswers() {
-  const score = [];
-  
-}
+// export function getAnswers() {
+//   const score = [];
+// }
 
 // show results
-function showResults(){
-  // get answers from the quiz
-  const answerContainers = quizContainer.querySelectorAll('.answers');
-  // keep track of users answers
-  let numCorrect = 0;
-  // for each question...
-  myQuestions.forEach( (currentQuestion, questionNumber) => {
-    // find selected answer
-    const answerContainer = answerContainers[questionNumber];
-    const selector = `input[name=question${questionNumber}]:checked`;
-    const userAnswer = (answerContainer.querySelector(selector) || {}).value;
-    
-    // if answer is correct
-    if(userAnswer === currentQuestion.correctAnswer){
-      // add to the number of correct answers
-      numCorrect++;
+export function showResults() {
+  const ran = getRandomNum(myResults.length);
+  let results = myResults[ran];
 
-      // color the answers green
-      answerContainers[questionNumber].style.color = 'lightgreen';
-    }
-    // if answer is wrong or blank
-    else{
-      // color the answers red
-      answerContainers[questionNumber].style.color = 'red';
-    }
-  });
-
-  // show number of correct answers out of total
-  resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+  resultsContainer.innerHTML = 
+    `<h4>You got:</h4>
+      <p class="resultPerson">${results.person}</p>
+      <p data-url="https://swapi.dev/api/people/${results.number}">More info...</p>
+    ` 
+    quizContainer.classList.add('hidden');
+    submitButton.classList.add('hidden');
+    resetButton.classList.remove('hidden');
+    resultsContainer.classList.remove('hidden');
+    console.log(dataset.url);
 }
+
+export function resetQuiz() {
+  quizContainer.classList.remove('hidden');
+    submitButton.classList.remove('hidden');
+    resetButton.classList.add('hidden');
+    resultsContainer.classList.add('hidden');
+}
+
+// // show results
+// function showResults(){
+//   // get answers from the quiz
+//   const answerContainers = quizContainer.querySelectorAll('.answers');
+//   // keep track of users answers
+//   let numCorrect = 0;
+//   // for each question...
+//   myQuestions.forEach( (currentQuestion, questionNumber) => {
+//     // find selected answer
+//     const answerContainer = answerContainers[questionNumber];
+//     const selector = `input[name=question${questionNumber}]:checked`;
+//     const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+    
+//     // if answer is correct
+//     if(userAnswer === currentQuestion.correctAnswer){
+//       // add to the number of correct answers
+//       numCorrect++;
+
+//       // color the answers green
+//       answerContainers[questionNumber].style.color = 'lightgreen';
+//     }
+//     // if answer is wrong or blank
+//     else{
+//       // color the answers red
+//       answerContainers[questionNumber].style.color = 'red';
+//     }
+//   });
+
+//   // show number of correct answers out of total
+//   resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+// }
 
 // questions & results arrays 
 const myQuestions = [
@@ -166,69 +176,83 @@ const myQuestions = [
 
 const myResults = [
   {
-    person: "https://swapi.dev/api/people/1/", // luke
-    ship: "https://swapi.dev/api/starships/12/",
-    weapon: "",
-    planet: "https://swapi.dev/api/planets/1/"
+    person: "Luke Skywalker", // luke
+    number: "1",
+    ship: "X-wing",
+    weapon: "light saber",
+    planet: "Tatooine"
   },
   {
-    person: "", // han
-    ship: "",
-    weapon: "",
-    planet: ""
+    person: "Han Solo", // han
+    number: "14",
+    ship: "Milenium Falcon",
+    weapon: "Blaster pistol",
+    planet: "Corellia"
   },
   {
-    person: "", // leia
-    ship: "",
-    weapon: "",
-    planet: ""
+    person: "Princess Leia", // leia
+    number: "5",
+    ship: "n/a",
+    weapon: "Blaster pistol",
+    planet: "Alderaan"
   },
   {
-    person: "", // rei
-    ship: "",
-    weapon: "",
-    planet: ""
+    person: "Rei", // rei
+    number: "",
+    ship: "Milenium Falcon",
+    weapon: "light saber",
+    planet: "Jakku"
   },
   {
-    person: "", // vadar
-    ship: "",
-    weapon: "",
-    planet: ""
+    person: "Darth Vadar", // vadar
+    number: "4",
+    ship: "The Devastator",
+    weapon: "light saber",
+    planet: "Tatooine"
   },
   {
-    person: "", // sith
-    ship: "",
-    weapon: "",
-    planet: ""
+    person: "Emperor Palpatine", // sith
+    number: "21",
+    ship: "The Eclipse",
+    weapon: "light saber",
+    planet: "Exegol"
   },
   {
-    person: "", // boba fet
-    ship: "",
-    weapon: "",
-    planet: ""
+    person: "Boba Fett", // boba fett
+    number: "22",
+    ship: "Slave I",
+    weapon: "Blaster, flame thrower, jet pack",
+    planet: "Kamino"
   },
   {
-    person: "", // mando
-    ship: "",
-    weapon: "",
+    person: "Mandolorian Din Djarin", // mando
+    number: "",
+    ship: "Razor Crest",
+    weapon: "Blaster, flame thrower, grappling line, Whistling Birds, jet pack",
     planet: ""
   },
   {
     person: "", // baby yoda
+    number: "",
     ship: "",
     weapon: "",
     planet: ""
   },
   {
-    person: "", // c3po
-    ship: "",
-    weapon: "",
-    planet: ""
+    person: "Baby Yoda", // c3po
+    number: "2",
+    ship: "Razor Crest",
+    weapon: "The force",
+    planet: "Tython"
   },
   {
-    person: "", // asoka
-    ship: "",
-    weapon: "",
-    planet: ""
+    person: "Asoka Tano", // asoka
+    number: "",
+    ship: "T-6 shuttle",
+    weapon: "2 light sabers",
+    planet: "Shili"
   }
 ];
+/* <li class="resultItem">Ship: ${results.ship}</li>
+<li class="resultItem">Weapon: ${results.weapon}</li>
+<li class="resultItem">Planet: ${results.planet}</li> */

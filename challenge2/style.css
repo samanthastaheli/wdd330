@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 
+/* Todo:
+- sw font for h1 
+- results grid
+- img size
+- canvas stars
+*/
+
 :root {
     --black: #131412;
     --yellow: #F8BF17;
@@ -55,7 +62,7 @@ label {
     line-height: 1.5rem;
 }
 
-#submit {
+#container button {
     margin: 20px 20px 20px 0px;
     padding: 5px;
     border-radius: 15px;
@@ -63,8 +70,21 @@ label {
     color: var(--ls-purple);
     background-color: var(--drk-gray);
 }
-#submit:hover {
+#container button:hover {
     border: 3px solid var(--ls-purple);
     color: var(--drk-gray);
     background-color: var(--ls-purple);
+}
+
+.hidden {
+    display: none;
+}
+
+/* results */
+#resultsList {
+    padding: 0;
+}
+.resultItem {
+    list-style: none;
+    padding: 10px 0px 10px 0px;
 }
