@@ -88,3 +88,6 @@ label {
     list-style: none;
     padding: 10px 0px 10px 0px;
 }
+#resultsImg {
+    width: 300px;
+}

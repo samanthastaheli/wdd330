@@ -19,3 +19,7 @@ export function getJSON(url) {
 export function getRandomNum(num) {
     return Math.floor(Math.random() * num);
 }
+
+export function eventListener(id, action, func) {
+    return document.getElementById(id).addEventListener(action, func)
+}

@@ -19,7 +19,7 @@ export function buildQuiz() {
           // add html radion button
           options.push(
             `<label>
-              <input type="radio" name="question${questionNumber}" value="${i}">
+              <input type="radio" unchecked name="question${questionNumber}" value="${currentQuestion.options[i]}">
               ${currentQuestion.options[i]}
             </label>`
           );
@@ -34,13 +34,47 @@ export function buildQuiz() {
     });
     // join everything together and show on page
      quizContainer.innerHTML = output.join('');  
+
+    //  quizContainer.innerHTML = 
+    //  `<div class="question">
+    //         <h4>${currentQuestion.question}</h4>
+    //   </div>
+    //   <div class="option"> 
+    //       <label>
+    //       <input type="radio" unchecked name="question${questionNumber}" value="${currentQuestion.options[i]}">
+    //       ${currentQuestion.options[i]}
+    //       </label> 
+    //     </div>`
+     ;  
+
+
+
 }
 
 // get answers
 // activated by sumbmit btn event listener in main.js
-// export function getAnswers() {
-//   const score = [];
-// }
+export function getAnswers() {
+  var questions = document.getElementsByName('question0');
+  var i = 0;
+  let answers = [];
+  myQuestions.forEach(question => {
+    questions = document.getElementsByName('question' + i)
+    for(var j = 0; j < questions.length; j++) {
+      if(questions[j].checked) {
+        answers.push(questions[j].value);
+      }
+    }
+    i++
+  });
+  localStorage.setItem('answers', JSON.stringify(answers));
+
+  if(){
+
+  } 
+  if(){
+
+  }
+}
 
 // show results
 export function showResults() {
@@ -49,6 +83,7 @@ export function showResults() {
 
   resultsContainer.innerHTML = 
     `<h4>You got:</h4>
+    <img id="resultsImg" src="${results.img}">
       <p class="resultPerson">${results.person}</p>
       <p data-url="https://swapi.dev/api/people/${results.number}">More info...</p>
     ` 
@@ -56,14 +91,15 @@ export function showResults() {
     submitButton.classList.add('hidden');
     resetButton.classList.remove('hidden');
     resultsContainer.classList.remove('hidden');
-    console.log(dataset.url);
+    // console.log(dataset.url);
 }
 
 export function resetQuiz() {
   quizContainer.classList.remove('hidden');
-    submitButton.classList.remove('hidden');
-    resetButton.classList.add('hidden');
-    resultsContainer.classList.add('hidden');
+  submitButton.classList.remove('hidden');
+  resetButton.classList.add('hidden');
+  resultsContainer.classList.add('hidden');
+  buildQuiz();
 }
 
 // // show results
@@ -177,6 +213,7 @@ const myQuestions = [
 const myResults = [
   {
     person: "Luke Skywalker", // luke
+    img: "img/luke-skywalker.png",
     number: "1",
     ship: "X-wing",
     weapon: "light saber",
@@ -184,6 +221,7 @@ const myResults = [
   },
   {
     person: "Han Solo", // han
+    img: "img/han-solo.jpg",
     number: "14",
     ship: "Milenium Falcon",
     weapon: "Blaster pistol",
@@ -191,13 +229,15 @@ const myResults = [
   },
   {
     person: "Princess Leia", // leia
+    img: "img/liea.jpg",
     number: "5",
     ship: "n/a",
     weapon: "Blaster pistol",
     planet: "Alderaan"
   },
   {
-    person: "Rei", // rei
+    person: "Rey", // rey
+    img: "img/rey.jpg",
     number: "",
     ship: "Milenium Falcon",
     weapon: "light saber",
@@ -205,6 +245,7 @@ const myResults = [
   },
   {
     person: "Darth Vadar", // vadar
+    img: "img/vadar.jpg",
     number: "4",
     ship: "The Devastator",
     weapon: "light saber",
@@ -212,6 +253,7 @@ const myResults = [
   },
   {
     person: "Emperor Palpatine", // sith
+    img: "img/sith.jpg",
     number: "21",
     ship: "The Eclipse",
     weapon: "light saber",
@@ -219,6 +261,7 @@ const myResults = [
   },
   {
     person: "Boba Fett", // boba fett
+    img: "img/boba-fett.jpg",
     number: "22",
     ship: "Slave I",
     weapon: "Blaster, flame thrower, jet pack",
@@ -226,27 +269,31 @@ const myResults = [
   },
   {
     person: "Mandolorian Din Djarin", // mando
+    img: "img/mando.jpeg",
     number: "",
     ship: "Razor Crest",
     weapon: "Blaster, flame thrower, grappling line, Whistling Birds, jet pack",
     planet: ""
   },
   {
-    person: "", // baby yoda
-    number: "",
+    person: "C3PO", 
+    img: "img/c3po.jpeg",
+    number: "2",
     ship: "",
     weapon: "",
     planet: ""
   },
   {
-    person: "Baby Yoda", // c3po
-    number: "2",
+    person: "Baby Yoda", 
+    img: "img/baby-yoda.jpg",
+    number: "",
     ship: "Razor Crest",
     weapon: "The force",
     planet: "Tython"
   },
   {
-    person: "Asoka Tano", // asoka
+    person: "Ahsoka Tano", // asoka
+    img: "img/ahsoka-tano.png",
     number: "",
     ship: "T-6 shuttle",
     weapon: "2 light sabers",
