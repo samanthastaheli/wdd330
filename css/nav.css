@@ -70,4 +70,6 @@ h1 {
 .dropdown-content a:hover {
     text-decoration: underline;
 }
-.show {display:block;}
+.show {
+    display: block;
+}

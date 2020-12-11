@@ -68,12 +68,12 @@ export function getAnswers() {
   });
   localStorage.setItem('answers', JSON.stringify(answers));
 
-  if(){
+  // if(){
 
-  } 
-  if(){
+  // };
+  // if(){
 
-  }
+  // };
 }
 
 // show results
