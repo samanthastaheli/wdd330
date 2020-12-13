@@ -97,15 +97,15 @@ function findTodo(id) { // finish
 //     // aray method   filter   indexOf   find() better    
 // }
 
-document.getElementById('completedButton').addEventListener('click', filterCompleted);
+// document.getElementById('completedButton').addEventListener('click', filterCompleted);
 
-function filterCompleted(e) {
-        let todo = findCompletedTodo(e.target.dataset.completed); 
+// function filterCompleted(e) {
+//         let todo = findCompletedTodo(e.target.dataset.completed); 
 
-        if(todo = 'false') {
-            todo.style.display = 'none';
-        }
-    }
+//         if(todo = 'false') {
+//             todo.style.display = 'none';
+//         }
+//     }
         
 
 
