@@ -10,22 +10,41 @@ export function createMenu() {
 
     for(let i = 0; i < weeks.length; i++) {
         menuDiv.innerHTML = 
-            `<a id="homeLink" href="index.html">Home</a>
+            `<div id="home">
+                <a id="homeLink" href="index.html">Home</a>
+            </div>
             <div class="dropdown">
                 <button class="dropButton" id="weeksDropButton" id="weekButton">Weeks<span class="material-icons">arrow_drop_down</span></button>
                 <div id="weekContent" class="dropdown-content"></div>
             </div>
             <div class="dropdown">
                 <button class="dropButton" id="activitesDropButton">Team Activities<span class="material-icons">arrow_drop_down</span></button>
-                <div id="activitesContent" class="dropdown-content">
-                    <a class="projectLink" href="week4/tictactoe/tictactoe.html">Tic Tac Toe</a>
-                    <a class="projectLink" href="week5/activity5/index.html">Hiking</a>
-                </div>
+                <div id="activitesContent" class="dropdown-content"></div>
             </div>
             <div class="dropdown">
                 <button class="dropButton" id="challengesDropButton">Challenges<span class="material-icons">arrow_drop_down</span></button>
                 <div id="challengesContent" class="dropdown-content"></div>
             </div>`
+    }
+}
+
+const challenges = document.getElementById('challengesContent');
+const activites = document.getElementById('activitesContent');
+const weekHTML = document.getElementById('weekContent');
+
+export function dropDown() {
+    if(document.getElementById('activitesDropButton')){
+        weekHTML.innerHTML = 
+            `<a class="dropedLink" href="week4/tictactoe/tictactoe.html">Tic Tac Toe</a>
+            <a class="dropedLink" href="week5/activity5/index.html">Hiking</a>`
+    } else if(document.getElementById('activitesDropButton')){
+        activites.innerHTML = 
+            `<a class="dropedLink" href="week4/tictactoe/tictactoe.html">Tic Tac Toe</a>
+            <a class="dropedLink" href="week5/activity5/index.html">Hiking</a>`
+    } else if(document.getElementById('challengesDropButton')){
+        challenges.innerHTML = 
+            `<a class="dropedLink" href="challenge1/index.html">Todo App</a>
+            <a class="dropedLink" href="challenge2/index.html">Challenge 2</a>`
     }
 }
 

@@ -19,17 +19,29 @@ h1 {
 }
 
 /* nav menu */
-#navBar {
+#menu {
     display: flex;
     flex-direction: row;
     font-size: 16px;
     color: var(--main-color);   
+}
+#home {
+    position: relative;
+    display: inline-block;
 }
 #homeLink {
     color: var(--main-color); 
     padding: 16px;
     text-decoration: none;
     display: block;
+    justify-self: center;
+    align-self: center;
+    background-color: var(--main-white);
+    border: none;
+    cursor: pointer;
+    padding: 16px;
+    font-size: 16px;
+    color: var(--main-color);
     justify-self: center;
     align-self: center;
 }

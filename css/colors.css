@@ -1,5 +1,6 @@
 :root {
-    --main-padding: 20px;
+
+    /* pallete 1
     --main-color: #7B9B81;
     --main-secondary: rgb(179, 81, 52);
     --main-pink: #ECA18B;
@@ -7,7 +8,19 @@
     --dark-green: #7C9B81;
     --main-white: white;
     --main-black: #242424;
-    --main-gray: #DCD9D5;
+    --main-gray: #DCD9D5; */
+
+    /* pallete 2 */
+    --main-color: #4A5C58;
+    --main-secondary: #F5C000;
+    --main-pink: #C4998B;
+    --main-yellow: #EBC18D;
+    --dark-green: #C3946A;
+    --main-white: white;
+    --main-black: #242424;
+    --main-gray: #AE9F87;
+
+    --main-padding: 20px;
     --header-font: 'Lato', sans-serif;
     /* --header-font: 'Tinos', serif; */
     --body-font: 'Lato', sans-serif;
