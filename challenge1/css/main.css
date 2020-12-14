@@ -154,6 +154,10 @@ i {
     background-color: lightgray;
 }
 
+.hidden {
+    display: none;
+}
+
 /* footer */
 footer {
     color: var(--main-color);

@@ -7,10 +7,15 @@ class Todo {
         this.init();
     }
     init() { // initiate 
-        todos = getFromLS(this.key);
+        if(getFromLS(this.key) != null) {
+            todos = getFromLS(this.key);
+        }
         document.querySelector('form').addEventListener('submit', this.handleSumbitForm.bind(this)); // bind(this) tells to not reasign 
         document.querySelector('ul').addEventListener('click', this.checkTodo);
         document.getElementById('clearAll').addEventListener('click', this.handleClearAll);
+        document.getElementById('completedButton').addEventListener('click', this.filterCompleted.bind(this));
+        document.getElementById('activeButton').addEventListener('click', this.filterActive.bind(this));
+        document.getElementById('allButton').addEventListener('click', this.displayAll.bind(this));
         this.displayTodos(todos);
     }
     handleSumbitForm(e) {
@@ -33,8 +38,7 @@ class Todo {
     checkTodo(e) {
         if(e.target.name == 'checkButton') {
             let item = e.target.parentNode;
-            console.log(e.target);
-            let clickedTodo = findTodo(e.target.dataset.id);  
+            let clickedTodo = findTodo(e.target.dataset.id); 
             if(item.style.textDecoration == 'line-through') {
                 item.style.textDecoration = 'none'; 
                 clickedTodo.completed = false;
@@ -52,7 +56,7 @@ class Todo {
             item.classList.add('todo-list-item-fall');
         } 
     }
-    handleClearAll(e) {
+    handleClearAll() {
         document.querySelector('ul').innerHTML = ''; // set ul to empty string 
     }
     createTodo(todo) {
@@ -68,9 +72,35 @@ class Todo {
         ul.appendChild(li); // li needs to be child of ul 
     }
     displayTodos(todos) {
-        todos.forEach((todo) => { // sends to create todo one at a time 
-            this.createTodo(todo) 
-        })
+        if(todos != null){
+            todos.forEach((todo) => { // sends to create todo one at a time 
+                this.createTodo(todo) 
+            })
+        }
+    }
+    filterCompleted() {
+        let completedTodos = [];
+        todos.forEach(todo => {
+            if(todo.completed == true) {
+                completedTodos.push(todo);
+            }
+        }) 
+        this.handleClearAll();
+        this.displayTodos(completedTodos);
+    }
+    filterActive() {
+        let activeTodos = [];
+        todos.forEach(todo => {
+            if(todo.completed == false) {
+                activeTodos.push(todo);
+            }
+        }) 
+        this.handleClearAll();
+        this.displayTodos(activeTodos);
+    }
+    displayAll() {
+        this.handleClearAll();
+        this.displayTodos(todos);
     }
 }
 
@@ -87,116 +117,4 @@ function findTodo(id) { // finish
     // aray method   filter   indexOf   find() better    
 }
 
-// function findCompletedTodo(completed) { // finish   
-//     document.getElementsByName('checkButton');
-//     return todos.find(todo => {
-//         let todo = todo.completed === completed;
-//         return todo;
-//     }) 
-//     // go through array 
-//     // aray method   filter   indexOf   find() better    
-// }
-
-// document.getElementById('completedButton').addEventListener('click', filterCompleted);
-
-// function filterCompleted(e) {
-//         let todo = findCompletedTodo(e.target.dataset.completed); 
-
-//         if(todo = 'false') {
-//             todo.style.display = 'none';
-//         }
-//     }
-        
-
-
-
 export default Todo;
-
-
-
-
-// OLD CODE 
-// seletors
-/* document.querySelector('form').addEventListener('submit', handleSumbitForm);
-document.querySelector('ul').addEventListener('click', handleDeleteOrCheck);
-document.getElementById('clearAll').addEventListener('click', handleClearAll);
-// document.getElementById('activeButton').addEventListener('click', filter);
-
-// event handler function
-function handleSumbitForm(e) {
-    e.preventDefault();
-    let input = document.querySelector('input');
-    localStorage.setItem('input', JSON.stringify(input.value));
-    if (input.value != '')
-        addTodo(input.value);
-        input.value = '';
-}
- 
-function handleDeleteOrCheck(e) {
-    if(e.target.name == 'checkButton')
-        checkTodo(e);
-
-    if(e.target.name == 'deleteButton')
-        deleteTodo(e);
-}
-
-function handleClearAll(e) {
-    document.querySelector('ul').innerHTML = ''; // set ul to empty string 
-}
-
-// function filter(e) {
-//     if(e.target.name == 'activeButton')
-//         filterActive(e);
-// }
-
-// helper functions
-function addTodo(todo) {
-    let ul = document.querySelector('ul'); // select ul and li make into variables
-    let li = document.createElement('li'); 
-
-    // create li element
-    li.innerHTML = `
-        <span class="todo-item">${todo}</span>
-        <button name="checkButton"><i class="fas fa-check-square"></i></button>
-        <button name="deleteButton"><i class="fas fa-trash"></i></button>
-    `;
-    li.classList.add('todo-list-item');
-    ul.appendChild(li); // li needs to be child of ul 
-}
-
-function checkTodo(e) {
-    let item = e.target.parentNode;
-    if(item.style.textDecoration == 'line-through')
-        item.style.textDecoration = 'none'; 
-    else 
-        item.style.textDecoration = 'line-through'; 
-}
-
-function deleteTodo(e) {
-    let item = e.target.parentNode;
-    item.addEventListener('transitionend', function() {
-        item.remove();
-    })
-    item.classList.add('todo-list-item-fall');
-} */
-
-// function filterActive() {
-//     let item = e.target.parentNode;
-//     if(item.style.textDecoration == 'line-through')
-//         display = 'none';   
-// }
-
-/* filter functions */
-
-// function filterActive() {
-//     // let active = todo-list-item.style.textDecoration == 'none';
-//     let completed = todo-list-item.style.textDecoration == 'line-through';
-//     if(completed)
-//         display = 'none'
-//     else 
-//         display = 'list-item'
-// }
-
-// let liNodes = document.querySelectorAll('li');
-// let liArray = Array.from('liNodes');
-// let activeFilter = liArray.filter('liArray');
