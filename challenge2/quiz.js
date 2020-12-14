@@ -15,14 +15,14 @@ export function buildQuiz() {
     myQuestions.forEach((currentQuestion, questionNumber) => {
         const options = []; // var to store list of possible options
         for(let i in currentQuestion.options){// for loop to create html for possible answers
-            // console.log(i);
+          // console.log(i);
           // add html radion button
           options.push(
             `<label>
-              <input type="radio" unchecked name="question${questionNumber}" value="${currentQuestion.options[i]}">
-              ${currentQuestion.options[i]}
+              <input type="radio" unchecked name="question${questionNumber}" value="${currentQuestion.options[i].point}">
+              ${currentQuestion.options[i].option}
             </label>`
-          );
+          ); 
         }
       // add this question and its answers to the output
       output.push(
@@ -34,17 +34,6 @@ export function buildQuiz() {
     });
     // join everything together and show on page
      quizContainer.innerHTML = output.join('');  
-
-    //  quizContainer.innerHTML = 
-    //  `<div class="question">
-    //         <h4>${currentQuestion.question}</h4>
-    //   </div>
-    //   <div class="option"> 
-    //       <label>
-    //       <input type="radio" unchecked name="question${questionNumber}" value="${currentQuestion.options[i]}">
-    //       ${currentQuestion.options[i]}
-    //       </label> 
-    //     </div>`
      ;  
 
 
@@ -54,30 +43,30 @@ export function buildQuiz() {
 // get answers
 // activated by sumbmit btn event listener in main.js
 export function getAnswers() {
-  var questions = document.getElementsByName('question0');
-  var i = 0;
+  let questions = document.getElementsByName('question0');
+  let i = 0;
   let answers = [];
   myQuestions.forEach(question => {
-    questions = document.getElementsByName('question' + i)
-    for(var j = 0; j < questions.length; j++) {
+    questions = document.getElementsByName('question' + i) 
+    for(let j = 0; j < questions.length; j++) {
       if(questions[j].checked) {
-        answers.push(questions[j].value);
+        answers.push(questions.options[j]);
       }
     }
     i++
   });
   localStorage.setItem('answers', JSON.stringify(answers));
+  // calcResults();
+  showResults();
+}
 
-  // if(){
-
-  // };
-  // if(){
-
-  // };
+// calculate results based on options object point 
+function calcResults() {
+   
 }
 
 // show results
-export function showResults() {
+function showResults() {
   const ran = getRandomNum(myResults.length);
   let results = myResults[ran];
 
@@ -102,36 +91,22 @@ export function resetQuiz() {
   buildQuiz();
 }
 
-// // show results
-// function showResults(){
-//   // get answers from the quiz
-//   const answerContainers = quizContainer.querySelectorAll('.answers');
-//   // keep track of users answers
-//   let numCorrect = 0;
-//   // for each question...
-//   myQuestions.forEach( (currentQuestion, questionNumber) => {
-//     // find selected answer
-//     const answerContainer = answerContainers[questionNumber];
-//     const selector = `input[name=question${questionNumber}]:checked`;
-//     const userAnswer = (answerContainer.querySelector(selector) || {}).value;
-    
-//     // if answer is correct
-//     if(userAnswer === currentQuestion.correctAnswer){
-//       // add to the number of correct answers
-//       numCorrect++;
+// show random results
+// export function showResults() {
+//   const ran = getRandomNum(myResults.length);
+//   let results = myResults[ran];
 
-//       // color the answers green
-//       answerContainers[questionNumber].style.color = 'lightgreen';
-//     }
-//     // if answer is wrong or blank
-//     else{
-//       // color the answers red
-//       answerContainers[questionNumber].style.color = 'red';
-//     }
-//   });
-
-//   // show number of correct answers out of total
-//   resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+//   resultsContainer.innerHTML = 
+//     `<h4>You got:</h4>
+//     <img id="resultsImg" src="${results.img}">
+//       <p class="resultPerson">${results.person}</p>
+//       <p data-url="https://swapi.dev/api/people/${results.number}">More info...</p>
+//     ` 
+//     quizContainer.classList.add('hidden');
+//     submitButton.classList.add('hidden');
+//     resetButton.classList.remove('hidden');
+//     resultsContainer.classList.remove('hidden');
+//     // console.log(dataset.url);
 // }
 
 // questions & results arrays 
@@ -139,73 +114,74 @@ const myQuestions = [
   {
     question: "Whose side are you on?",
     options: {
-      a: "Empire",
-      b: "Republic"
+      a: { option: "Empire", point: "sith" },
+      b: { option: "Republic", point: "luke" }
     },
   },
   {
     question: "What do you prefer?",
     options: {
-      a: "sand",
-      b: "forest",
-      c: "water",
-      d: "snow",
-      e: "ships only"
-    },
+      a: { option: "sand", point: "rey" },
+      b: { option: "forest", point: "luke" },
+      c: { option: "water", point: "fett" },
+      d: { option: "snow", point: "han" },
+      e: { option: "ships only", point: "mando" }
+    }
   },
   {
     question: "How are your light saber skills?",
     options: {
-      a: "I am a master",
-      b: "I am a beginner",
-      c: "No light sabers for me, I'll stick to guns",
-      d: "I don't use weapons",
-      e: "What's a light saber?"
+      a: { option: "I am a master", point: "luke" },
+      b: { option: "I am a beginner", point: "rey" },
+      c: { option: "No light sabers for me, I'll stick to guns", point: "mando" },
+      d: { option: "I don't use weapons", point: "c3po" },
+      e: { option: "What's a light saber?", point: "c3po" }
     },
   },
   {
     question: "Who is your favorite character?",
     options: {
-      a: "Han Solo",
-      b: "Mandalorian Di Dijan", // !!!! figure out how to spell his name 
-      c: "Yoda",
-      d: "Baby Yoda",
-      e: "Luke Skywalker",
-      f: "Darth Vadar",
-      g: "Obi One Kinoby", // !!!!! wrong spelling
-      h: "Princess Leia",
-      i: "Asoka Tono",
-      j: "Chewbacca",
-      k: "Ben Solo",
-      l: "Rei",
-      m: "Sand People"
+      a: { option: "Han Solo", point: "leia" },
+      b: { option: "Mandalorian Din Djarin", point: "child" },
+      c: { option: "Yoda", point: "luke" },
+      d: { option: "Baby Yoda", point: "mando" },
+      e: { option: "Luke Skywalker", point: "han" },
+      f: { option: "Darth Vadar", point: "sith" },
+      g: { option: "Obi-Wan Kenobi", point: "vadar" },
+      h: { option: "Leia Organa Skywalker", point: "han" },
+      i: { option: "Ashoka Tono", point: "ashoka" },
+      j: { option: "Chewbacca", point: "han" },
+      k: { option: "Ben Solo", point: "rey" },
+      l: { option: "Rey", point: "leia" } 
     },
   },
   {
     question: "Who is your favorite pet or side kick?",
     options: {
-      a: "The child",
-      b: "Chewbacca",
-      c: "R2-D2",
-      d: "C3PO",
-      e: "Porg",
-      f: "Ewok",
-      g: "Crazy snow spider",
-      h: "Banthas (sad peoples bison thing)",
-      i: "BB8", // !!!! check spelling
-      j: "Jawa"
+      a: { option: "The child", point: "mando" },
+      b: { option: "Chewbacca", point: "han" },
+      c: { option: "R2-D2", point: "luke" },
+      d: { option: "C3PO", point: "c3po" },
+      e: { option: "Porg", point: "rey" },
+      f: { option: "Ewok", point: "leia" },
+      g: { option: "Crazy snow spider", point: "sith" },
+      h: { option: "Banthas (sad peoples bison thing)", point: "ashoka" },
+      i: { option: "Ashoka Tono", point: "ashoka" },
+      j: { option: "BB8", point: "rey" },
+      k: { option: "Jawa", point: "c3po" }
     },
   },
   {
     question: "What is most important?",
     options: {
-      a: "family",
-      b: "power", 
-      c: "surviving",
-      d: "killing all Jedis",
-      e: "defeating the empire",
-      f: "love",
-      g: "being able to bring people back from the dead"
+      a: { option: "family", point: "han" },
+      b: { option: "power", point: "vadar" },
+      c: { option: "surviving", point: "ashoka" },
+      d: { option: "protecting the child", point: "mando" },
+      e: { option: "killing all Jedis", point: "sith" },
+      f: { option: "defeating the empire", point: "luke" },
+      g: { option: "love", point: "vadar" },
+      h: { option: "being able to bring people back from the dead", point: "vadar" }
     },
   }
 ];
@@ -228,7 +204,7 @@ const myResults = [
     planet: "Corellia"
   },
   {
-    person: "Princess Leia", // leia
+    person: "Leia Organa Skywalker", // leia
     img: "img/liea.jpg",
     number: "5",
     ship: "n/a",
@@ -268,7 +244,7 @@ const myResults = [
     planet: "Kamino"
   },
   {
-    person: "Mandolorian Din Djarin", // mando
+    person: "Mandolorian Din Djarin",
     img: "img/mando.jpeg",
     number: "",
     ship: "Razor Crest",

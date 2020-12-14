@@ -1,7 +1,7 @@
 import { buildQuiz } from './quiz.js';
 import { getJSON } from './utilities.js';
 import { eventListener } from './utilities.js';
-import { showResults } from './quiz.js';
+// import { showResults } from './quiz.js';
 import { resetQuiz } from './quiz.js';
 import { getAnswers } from './quiz.js';
 
