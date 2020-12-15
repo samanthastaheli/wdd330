@@ -15,37 +15,54 @@ export function createMenu() {
             </div>
             <div class="dropdown">
                 <button class="dropButton" id="weeksDropButton" id="weekButton">Weeks<span class="material-icons">arrow_drop_down</span></button>
-                <div id="weekContent" class="dropdown-content"></div>
+                <div id="weekContent" class="hidden"></div>
             </div>
             <div class="dropdown">
                 <button class="dropButton" id="activitesDropButton">Team Activities<span class="material-icons">arrow_drop_down</span></button>
-                <div id="activitesContent" class="dropdown-content"></div>
+                <div id="activitesContent" class="hidden"></div>
             </div>
             <div class="dropdown">
                 <button class="dropButton" id="challengesDropButton">Challenges<span class="material-icons">arrow_drop_down</span></button>
-                <div id="challengesContent" class="dropdown-content"></div>
+                <div id="challengesContent" class="hidden"></div>
             </div>`
     }
 }
 
 const challenges = document.getElementById('challengesContent');
 const activites = document.getElementById('activitesContent');
-const weekHTML = document.getElementById('weekContent');
 
-export function dropDown() {
-    if(document.getElementById('activitesDropButton')){
-        weekHTML.innerHTML = 
-            `<a class="dropedLink" href="week4/tictactoe/tictactoe.html">Tic Tac Toe</a>
-            <a class="dropedLink" href="week5/activity5/index.html">Hiking</a>`
-    } else if(document.getElementById('activitesDropButton')){
-        activites.innerHTML = 
-            `<a class="dropedLink" href="week4/tictactoe/tictactoe.html">Tic Tac Toe</a>
-            <a class="dropedLink" href="week5/activity5/index.html">Hiking</a>`
-    } else if(document.getElementById('challengesDropButton')){
-        challenges.innerHTML = 
-            `<a class="dropedLink" href="challenge1/index.html">Todo App</a>
-            <a class="dropedLink" href="challenge2/index.html">Challenge 2</a>`
-    }
+export function dropWeeks() {
+    let weeks = document.getElementById('weekContent');
+    weeks.innerHTML = 
+    `<a class="dropedLink" href="week1.html">Week 1</a>
+    <a class="dropedLink" href="week2.html">Week 2</a>
+    <a class="dropedLink" href="week3.html">Week 3</a>
+    <a class="dropedLink" href="week4.html">Week 4</a>
+    <a class="dropedLink" href="week5.html">Week 5</a>
+    <a class="dropedLink" href="week6.html">Week 6</a>
+    <a class="dropedLink" href="week7.html">Week 7</a>
+    <a class="dropedLink" href="week8.html">Week 8</a>
+    <a class="dropedLink" href="week9.html">Week 9</a>
+    <a class="dropedLink" href="week10.html">Week 10</a>`
+
+    weeks.classList.toggle('hidden');
+}
+export function dropActivities() {
+    let activites = document.getElementById('activitesContent');
+    activites.innerHTML = 
+    `<a class="dropedLink" href="week4/tictactoe/tictactoe.html">Tic Tac Toe</a>
+    <a class="dropedLink" href="week5/activity5/index.html">Hiking</a>
+    <a class="dropedLink" href="week8/pokemon-api/index.html">Pokemon</a>`
+
+    activites.classList.toggle('hidden');
+}
+export function dropChallenges() {
+    let challenges = document.getElementById('challengesContent');
+    challenges.innerHTML = 
+    `<a class="dropedLink" href="challenge1/index.html">Todo App</a>
+    <a class="dropedLink" href="challenge2/index.html">Challenge 2</a>`
+
+    challenges.classList.toggle('hidden');
 }
 
 // // export function weekDropdown() {
