@@ -42,12 +42,12 @@ export function buildQuiz() {
 
 // get answers
 // activated by sumbmit btn event listener in main.js
-let answers = [];
+
 
 export function getAnswers() {
   let questions = document.getElementsByName('question0');
   let i = 0;
-  // let answers = []; now global var
+  let answers = []; 
   myQuestions.forEach(question => {
     questions = document.getElementsByName('question' + i) 
     for(let j = 0; j < questions.length; j++) {
@@ -59,8 +59,38 @@ export function getAnswers() {
   });
   localStorage.setItem('answers', JSON.stringify(answers));
 
-  // answers.filter(calcResults);
-  answers.filter(calcResults);
+  console.log(answers.filter(answer => answers.values == 'sith' > 2));
+  
+  answers.forEach(function(item, index, array) {
+    //console.log(item, index);
+    if(item == 'luke'){
+      showResults(myResults[0]);
+    } else if(item == 'han'){
+      showResults(myResults[1]);
+    } else if(item == 'leia'){
+      showResults(myResults[2]);
+    } else if(item == 'rey'){
+      showResults(myResults[3]);
+    } else if(item == 'vadar'){
+      showResults(myResults[4]);
+    } else if(item == 'sith'){
+      showResults(myResults[5]);
+    } else if(item == 'fett'){
+      showResults(myResults[6]);
+    } else if(item == 'mando'){
+      showResults(myResults[7]);
+    } else if(item == 'c3po'){
+      showResults(myResults[8]);
+    } else if(item == 'child'){
+      showResults(myResults[9]);
+    } else if(item == 'ahsoka'){
+      showResults(myResults[10]);
+    }
+  })
+
+  // for(let i = 0; i < answers.length; i++){
+  //   if(answers['luke']){}
+  // }
 }
 
 // calculate results based on options object point 
@@ -68,17 +98,14 @@ function calcResults() {
   answers.forEach(myResults => {
     for(let i = 0; i < myResults.length; i++) {
       if(answers[i] = 'luke'){
-        showResults(myResults.codeName = 'luke'); 
+        showResults(myResults[6]); 
       }
     }
   })
 }
 
 // show results
-function showResults() {
-  const ran = getRandomNum(myResults.length);
-  let results = myResults[ran];
-
+function showResults(results) {
   resultsContainer.innerHTML = 
     `<h4>You got:</h4>
     <img id="resultsImg" src="${results.img}">
