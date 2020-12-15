@@ -56,7 +56,7 @@ main {
     border-radius: 8px;
 }
 .linkBoxLink {
-    color: var(--main-black);
+    color: var(--main-color);
     text-decoration: none;
     text-align: center;
 }
