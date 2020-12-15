@@ -24,7 +24,7 @@ h1 {
     color: var(--main-color);
 }
 
-h2 {
+h2 { 
     font-size: 48px;
     text-align: center;
     padding: 80px 40px 0px 40px;
@@ -39,7 +39,9 @@ main {
 .linkList {
     display: flex;
     flex-wrap: wrap;
-}
+    justify-content: center;
+    padding-left: 0px;
+} 
 .linkBox {
     display: flex;
     width: 120px;
@@ -56,6 +58,7 @@ main {
 .linkBoxLink {
     color: var(--main-black);
     text-decoration: none;
+    text-align: center;
 }
 .linkBoxLink:hover {
     color: var(--main-pink);
