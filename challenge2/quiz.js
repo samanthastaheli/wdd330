@@ -42,31 +42,58 @@ export function buildQuiz() {
 
 // get answers
 // activated by sumbmit btn event listener in main.js
+let answers = [];
+
 export function getAnswers() {
   let questions = document.getElementsByName('question0');
   let i = 0;
-  let answers = [];
+  // let answers = []; now global var
   myQuestions.forEach(question => {
     questions = document.getElementsByName('question' + i) 
     for(let j = 0; j < questions.length; j++) {
       if(questions[j].checked) {
-        answers.push(questions.options[j]);
+        answers.push(questions[j].value);
       }
     }
     i++
   });
   localStorage.setItem('answers', JSON.stringify(answers));
-  // calcResults();
-  showResults();
+
+  // answers.filter(calcResults);
+  answers.filter(calcResults);
 }
 
 // calculate results based on options object point 
 function calcResults() {
-   
+  answers.forEach(myResults => {
+    for(let i = 0; i < myResults.length; i++) {
+      if(answers[i] = 'luke'){
+        showResults(myResults.codeName = 'luke'); 
+      }
+    }
+  })
 }
 
 // show results
 function showResults() {
+  const ran = getRandomNum(myResults.length);
+  let results = myResults[ran];
+
+  resultsContainer.innerHTML = 
+    `<h4>You got:</h4>
+    <img id="resultsImg" src="${results.img}">
+      <p class="resultPerson">${results.person}</p>
+      <p data-url="https://swapi.dev/api/people/${results.number}">More info...</p>
+    ` 
+    quizContainer.classList.add('hidden');
+    submitButton.classList.add('hidden');
+    resetButton.classList.remove('hidden');
+    resultsContainer.classList.remove('hidden');
+    // console.log(dataset.url);
+}
+
+//show random results
+function showRandom() {
   const ran = getRandomNum(myResults.length);
   let results = myResults[ran];
 
@@ -89,25 +116,8 @@ export function resetQuiz() {
   resetButton.classList.add('hidden');
   resultsContainer.classList.add('hidden');
   buildQuiz();
+  // clear local storage !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 }
-
-// show random results
-// export function showResults() {
-//   const ran = getRandomNum(myResults.length);
-//   let results = myResults[ran];
-
-//   resultsContainer.innerHTML = 
-//     `<h4>You got:</h4>
-//     <img id="resultsImg" src="${results.img}">
-//       <p class="resultPerson">${results.person}</p>
-//       <p data-url="https://swapi.dev/api/people/${results.number}">More info...</p>
-//     ` 
-//     quizContainer.classList.add('hidden');
-//     submitButton.classList.add('hidden');
-//     resetButton.classList.remove('hidden');
-//     resultsContainer.classList.remove('hidden');
-//     // console.log(dataset.url);
-// }
 
 // questions & results arrays 
 const myQuestions = [
@@ -189,6 +199,7 @@ const myQuestions = [
 const myResults = [
   {
     person: "Luke Skywalker", // luke
+    codeName: "luke",
     img: "img/luke-skywalker.png",
     number: "1",
     ship: "X-wing",
@@ -197,6 +208,7 @@ const myResults = [
   },
   {
     person: "Han Solo", // han
+    codeName: "han",
     img: "img/han-solo.jpg",
     number: "14",
     ship: "Milenium Falcon",
@@ -205,6 +217,7 @@ const myResults = [
   },
   {
     person: "Leia Organa Skywalker", // leia
+    codeName: "leia",
     img: "img/liea.jpg",
     number: "5",
     ship: "n/a",
@@ -213,6 +226,7 @@ const myResults = [
   },
   {
     person: "Rey", // rey
+    codeName: "rey",
     img: "img/rey.jpg",
     number: "",
     ship: "Milenium Falcon",
@@ -221,6 +235,7 @@ const myResults = [
   },
   {
     person: "Darth Vadar", // vadar
+    codeName: "vadar",
     img: "img/vadar.jpg",
     number: "4",
     ship: "The Devastator",
@@ -229,6 +244,7 @@ const myResults = [
   },
   {
     person: "Emperor Palpatine", // sith
+    codeName: "sith",
     img: "img/sith.jpg",
     number: "21",
     ship: "The Eclipse",
@@ -237,6 +253,7 @@ const myResults = [
   },
   {
     person: "Boba Fett", // boba fett
+    codeName: "fett",
     img: "img/boba-fett.jpg",
     number: "22",
     ship: "Slave I",
@@ -245,6 +262,7 @@ const myResults = [
   },
   {
     person: "Mandolorian Din Djarin",
+    codeName: "mando",
     img: "img/mando.jpeg",
     number: "",
     ship: "Razor Crest",
@@ -253,6 +271,7 @@ const myResults = [
   },
   {
     person: "C3PO", 
+    codeName: "c3po",
     img: "img/c3po.jpeg",
     number: "2",
     ship: "",
@@ -261,6 +280,7 @@ const myResults = [
   },
   {
     person: "Baby Yoda", 
+    codeName: "child",
     img: "img/baby-yoda.jpg",
     number: "",
     ship: "Razor Crest",
@@ -269,6 +289,7 @@ const myResults = [
   },
   {
     person: "Ahsoka Tano", // asoka
+    codeName: "ahsoka",
     img: "img/ahsoka-tano.png",
     number: "",
     ship: "T-6 shuttle",
