@@ -99,7 +99,6 @@ function showResults(results) {
     `<h4>You got:</h4>
     <img id="resultsImg" src="${results.img}">
       <p class="resultPerson">${results.person}</p>
-      <p data-url="https://swapi.dev/api/people/${results.number}">More info...</p>
     ` 
     quizContainer.classList.add('hidden');
     submitButton.classList.add('hidden');
