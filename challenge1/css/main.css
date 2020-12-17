@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 
+:root {
+    --main-padding: 20px;
+    --main-color: #7B9B81;
+    --main-secondary: rgb(179, 81, 52);
+    --main-white: white;
+    --main-black: #242424;
+    --header-font: 'Lato', sans-serif;
+    /* --header-font: 'Tinos', serif; */
+    --body-font: 'Lato', sans-serif;
+}
+
 body {
     font-family: 'Lato', sans-serif; 
     font-size: 16px;
@@ -131,8 +142,17 @@ i {
     margin-top: 20px;
 }
 
-.tab {
+.tabOn {
     background-color: white;
+    border-radius: 5px 5px 0px 0px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 14px;  
+    color: #7B9B81; 
+}
+
+.tab {
+    background-color: lightgray;
     border-radius: 5px 5px 0px 0px;
     padding: 10px;
     cursor: pointer;
@@ -143,16 +163,6 @@ i {
 .tab:hover {
     color: #ECA18B;
 } */
-
-#allButton {
-    color: #7B9B81;
-}
-#activeButton {
-    background-color: lightgray;
-}
-#completedButton {
-    background-color: lightgray;
-}
 
 .hidden {
     display: none;

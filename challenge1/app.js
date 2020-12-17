@@ -58,6 +58,7 @@ class Todo {
     }
     handleClearAll() {
         document.querySelector('ul').innerHTML = ''; // set ul to empty string 
+        let todos = [];
     }
     createTodo(todo) {
         let ul = document.querySelector('ul'); // select ul and li make into variables
@@ -87,6 +88,12 @@ class Todo {
         }) 
         this.handleClearAll();
         this.displayTodos(completedTodos);
+        document.getElementById('completedButton').classList.remove('tab');
+        document.getElementById('completedButton').classList.add('tabOn');
+        document.getElementById('allButton').classList.remove('tabOn');
+        document.getElementById('allButton').classList.add('tab');
+        document.getElementById('activeButton').classList.remove('tabOn');
+        document.getElementById('activeButton').classList.add('tab');
     }
     filterActive() {
         let activeTodos = [];
@@ -97,10 +104,22 @@ class Todo {
         }) 
         this.handleClearAll();
         this.displayTodos(activeTodos);
+        document.getElementById('activeButton').classList.remove('tab');
+        document.getElementById('activeButton').classList.add('tabOn');
+        document.getElementById('allButton').classList.remove('tabOn');
+        document.getElementById('allButton').classList.add('tab');
+        document.getElementById('completedButton').classList.remove('tabOn');
+        document.getElementById('completedButton').classList.add('tab');
     }
     displayAll() {
         this.handleClearAll();
         this.displayTodos(todos);
+        document.getElementById('allButton').classList.remove('tab');
+        document.getElementById('allButton').classList.add('tabOn');
+        document.getElementById('completedButton').classList.remove('tabOn');
+        document.getElementById('completedButton').classList.add('tab');
+        document.getElementById('activeButton').classList.remove('tabOn');
+        document.getElementById('activeButton').classList.add('tab');
     }
 }
 
