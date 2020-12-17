@@ -6,7 +6,6 @@ const quizContainer = document.getElementById('quiz');
 const resultsContainer = document.getElementById('results');
 const submitButton = document.getElementById('submit'); 
 const resetButton = document.getElementById('reset');
-const baseUrl = "https://swapi.dev/api/";
 
 // Functions
 // create the questions
@@ -34,16 +33,10 @@ export function buildQuiz() {
     });
     // join everything together and show on page
      quizContainer.innerHTML = output.join('');  
-     ;  
-
-
-
 }
 
 // get answers
 // activated by sumbmit btn event listener in main.js
-
-
 export function getAnswers() {
   let questions = document.getElementsByName('question0');
   let i = 0;
@@ -87,10 +80,6 @@ export function getAnswers() {
       showResults(myResults[10]);
     }
   })
-
-  // for(let i = 0; i < answers.length; i++){
-  //   if(answers['luke']){}
-  // }
 }
 
 // calculate results based on options object point 
@@ -116,7 +105,6 @@ function showResults(results) {
     submitButton.classList.add('hidden');
     resetButton.classList.remove('hidden');
     resultsContainer.classList.remove('hidden');
-    // console.log(dataset.url);
 }
 
 //show random results
@@ -143,7 +131,10 @@ export function resetQuiz() {
   resetButton.classList.add('hidden');
   resultsContainer.classList.add('hidden');
   buildQuiz();
-  // clear local storage !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+}
+
+function slideAndFade(event) {
+  event.target.classList.toggle('slide');
 }
 
 // questions & results arrays 
@@ -225,7 +216,7 @@ const myQuestions = [
 
 const myResults = [
   {
-    person: "Luke Skywalker", // luke
+    person: "Luke Skywalker",
     codeName: "luke",
     img: "img/luke-skywalker.png",
     number: "1",
@@ -324,6 +315,3 @@ const myResults = [
     planet: "Shili"
   }
 ];
-/* <li class="resultItem">Ship: ${results.ship}</li>
-<li class="resultItem">Weapon: ${results.weapon}</li>
-<li class="resultItem">Planet: ${results.planet}</li> */

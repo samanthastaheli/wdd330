@@ -1,15 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
-
 /* Todo:
-- sw font for h1 
 - results grid
 - img size
-- canvas stars
 */
 
 :root {
     --black: #131412;
-    --yellow: #F8BF17;
+    --yellow: #FFE81F;
     --drk-gray: #221a27; 
     --gray: lightgray;
     --ls-green: #6FBF44;
@@ -24,17 +21,23 @@
 
 body {
     font-family: 'Lato', sans-serif;
-    background-color: black;
     color: var(--ls-white);
     margin: auto;
     min-width: 300px;
     max-width: 800px;
+    background-image: url("img/stars.png");
+    background-size: 100%;
+    background-color: black;
 }
 
 header {
     text-align: center;
     color: var(--yellow);
     margin: 20px;
+}
+
+h1 {
+    font-family: 'Star Jedi', arial;
 }
 
 #container {
@@ -89,5 +92,9 @@ label {
     padding: 10px 0px 10px 0px;
 }
 #resultsImg {
-    width: 300px;
+    max-width: 80%;
 }
+.resultPerson {
+    font-size: 26px;
+}
+
